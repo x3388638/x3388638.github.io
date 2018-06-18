@@ -6,6 +6,7 @@ import {
 import Jumbo from './Jumbo';
 import About from './About';
 import Education from './Education';
+import Skill from './Skill';
 
 import './App.css';
 
@@ -16,6 +17,7 @@ export default class App extends Component {
 				<Jumbo />
 				<About />
 				<Education />
+				<Skill />
 			</Container>
 		);
 	}
