@@ -3,9 +3,7 @@ import {
 	Container,
 	Col,
 	Row,
-	Card,
-	CardTitle,
-	CardText
+	Card
 } from 'reactstrap';
 import BlockTitle from './BlockTitle';
 

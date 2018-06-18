@@ -1,17 +1,8 @@
-Using the public Folder
-Note: this feature is available with react-scripts@0.5.0 and higher.
+暨大資管所研究生，將於今年 (2018) 七月畢業。
 
-Changing the HTML
-The public folder contains the HTML file so you can tweak it, for example, to set the page title. The <script> tag with the compiled code will be added to it automatically during the build process.
+具 4 年之網頁開發經驗，其中以前端更為擅長，熟 JavaScript、React、jQuery 等。
+目前已於意門科技 (Imonology Inc.) 實習 3 年逾，協助各專案之網頁前後端開發、維護，
+並於 2017 年參與國泰金控 CIP 實習計畫，投入國泰人壽投資資訊部進行專案之維護，亦曾協助海外聯招委員會數個新系統之前端開發。
 
-Adding Assets Outside of the Module System
-You can also add other assets to the public folder.
-
-Note that we normally encourage you to import assets in JavaScript files instead. For example, see the sections on adding a stylesheet and adding images and fonts. This mechanism provides a number of benefits:
-
-Scripts and stylesheets get minified and bundled together to avoid extra network requests.
-Missing files cause compilation errors instead of 404 errors for your users.
-Result filenames include content hashes so you don’t need to worry about browsers caching their old versions.
-However there is an escape hatch that you can use to add an asset outside of the module system.
-
-If you put a file into the public folder, it will not be processed by Webpack. Instead it will be copied into the build folder untouched. To reference assets in the public folder, you need to use a special variable called PUBLIC_URL.
+本身熱愛程式開發，享受親手打造產品的成就感，並樂於開放原始碼之實踐，
+喜歡利用閒暇之餘開發有助於生活便利性之個人專案，詳見下方專案清單。
