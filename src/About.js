@@ -36,7 +36,7 @@ export default class About extends React.Component {
 							title="關於我"
 						/>
 					</Col>
-					<Col className="About__content" md={ 12 }>{ this.state.content }</Col>
+					<div className="About__content">{ this.state.content }</div>
 				</Row>
 			</Container>
 		)

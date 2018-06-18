@@ -1,9 +1,9 @@
 .About {
 	padding-top: 20px;
-	padding-bottom: 20px;
 	color: var(--dark);
 }
 
 .About__content {
 	white-space: pre-line;
+	margin-left: 40px;
 }

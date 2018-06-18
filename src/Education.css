@@ -1,0 +1,23 @@
+.Education {
+	padding-top: 20px;
+	color: var(--dark);
+}
+
+.Education__content {
+	margin-left: 40px;
+}
+
+.Education__item {
+	padding-left: 10px;
+	border-left: 4px solid #d3d3d3;
+	margin-bottom: 10px;
+}
+
+.Education__school {
+	display: inline;
+}
+
+.Education__time {
+	margin-left: 10px;
+	font-size: 14px;
+}

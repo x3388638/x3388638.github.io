@@ -12,7 +12,7 @@ import './App.css';
 export default class App extends Component {
 	render() {
 		return (
-			<Container fluid>
+			<Container className="Main" fluid>
 				<Jumbo />
 				<About />
 				<Education />
