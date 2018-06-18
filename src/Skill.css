@@ -58,3 +58,13 @@
 .Skill__item {
 	text-align: center
 }
+
+.Skill__text {
+	cursor: pointer;
+	display: block;
+	margin-bottom: 5px;
+}
+
+.Skill__text:hover {
+	background: #f3f3f3;
+}

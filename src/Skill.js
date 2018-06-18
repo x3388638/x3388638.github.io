@@ -55,7 +55,9 @@ export default class Skill extends React.Component {
 									{ this.state.skills &&
 										<Row>
 											{ this.state.skills[0].map((skill, i) => (
-												<Col key={ i } className="Skill__item" xs={ 6 }>{ skill }</Col>
+												<Col key={ i } className="Skill__item" xs={ 6 }>
+													<a className="Skill__text" href={ skill.link } target="_blank" rel="noopener noreferrer">{ skill.text }</a>
+												</Col>
 											)) }
 										</Row>
 									}
@@ -67,7 +69,9 @@ export default class Skill extends React.Component {
 									{this.state.skills &&
 										<Row>
 											{ this.state.skills[1].map((skill, i) => (
-												<Col key={ i } className="Skill__item" xs={ 6 }>{ skill }</Col>
+												<Col key={ i } className="Skill__item" xs={ 6 }>
+													<a className="Skill__text" href={ skill.link } target="_blank" rel="noopener noreferrer">{ skill.text }</a>
+												</Col>
 											)) }
 										</Row>
 									}
