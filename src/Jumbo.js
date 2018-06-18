@@ -20,13 +20,13 @@ export default class Jumbo extends React.Component {
 					</div>
 					<div>
 						<a className="Jumbo__socialLink" href="https://github.com/x3388638" rel="noopener noreferrer" target="_blank">
-							<i className="fa fa-github-square"></i> x3388638
+							<i className="fa fa-github-square"></i> GitHub
 						</a>
 						<a className="Jumbo__socialLink" href="https://www.linkedin.com/in/yuyingchang/" rel="noopener noreferrer" target="_blank">
-							<i className="fa fa-linkedin-square"></i> yuyingchang
+							<i className="fa fa-linkedin-square"></i> Linkedin
 						</a>
-						<a className="Jumbo__socialLink" href="mailto:z3388638@gmail.com" rel="noopener noreferrer" target="_blank">
-							<i className="fa fa-envelope-open"></i> z3388638@gmail.com
+						<a className="Jumbo__socialLink" href="mailto:z3388638@gmail.com">
+							<i className="fa fa-envelope-open"></i> Email
 						</a>
 					</div>
 				</Col>

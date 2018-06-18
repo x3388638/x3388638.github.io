@@ -4,6 +4,8 @@ import {
 } from 'reactstrap';
 
 import Jumbo from './Jumbo';
+import About from './About';
+import Education from './Education';
 
 import './App.css';
 
@@ -12,6 +14,8 @@ export default class App extends Component {
 		return (
 			<Container fluid>
 				<Jumbo />
+				<About />
+				<Education />
 			</Container>
 		);
 	}

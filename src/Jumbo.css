@@ -1,7 +1,7 @@
 .Jumbo {
 	background: var(--dark);
 	padding-top: 120px;
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 }
 
 .Jumbo__container {
@@ -26,6 +26,7 @@
 .Jumbo__socialLink:visited {
 	display: inline-block;
 	color: var(--light);
+	font-size: 14px;
 	font-weight: 100;
 	margin-left: 10px;
 	margin-right: 10px;
