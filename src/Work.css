@@ -2,3 +2,23 @@
 	padding-top: 20px;
 	color: var(--dark);
 }
+
+.Work__content {
+	margin-left: 40px;
+}
+
+.WorkItem {
+	margin-bottom: 10px;
+}
+
+.WorkItem__at {
+	font-size: 18px;
+	margin-bottom: 10px !important;
+	font-weight: 400;
+}
+
+.WorkItem__time {
+	font-size: 16px;
+	margin-bottom: 10px !important;
+	font-weight: 300;
+}

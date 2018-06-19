@@ -5,7 +5,6 @@
 
 .Skill__content {
 	margin-left: 40px;
-	width: 100%;
 }
 
 .CardLabel {
@@ -52,7 +51,7 @@
 }
 
 .Skill__block {
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 }
 
 .Skill__item {

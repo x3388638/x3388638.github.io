@@ -46,36 +46,38 @@ export default class Skill extends React.Component {
 						/>
 					</Col>
 					<div className="Skill__content">
-						<Row>
-							<Col className="Skill__block" md={ 6 }>
-								<Card body>
-									<CardLabel color="success" text="熟悉" />
-									{ this.state.skills &&
-										<Row>
-											{ this.state.skills[0].map((skill, i) => (
-												<Col key={ i } className="Skill__item" xs={ 6 }>
-													<a className="Skill__text" href={ skill.link } target="_blank" rel="noopener noreferrer">{ skill.text }</a>
-												</Col>
-											)) }
-										</Row>
-									}
-								</Card>
-							</Col>
-							<Col className="Skill__block" md={ 6 }>
-								<Card body>
-									<CardLabel color="yellow" text="略懂" />
-									{this.state.skills &&
-										<Row>
-											{ this.state.skills[1].map((skill, i) => (
-												<Col key={ i } className="Skill__item" xs={ 6 }>
-													<a className="Skill__text" href={ skill.link } target="_blank" rel="noopener noreferrer">{ skill.text }</a>
-												</Col>
-											)) }
-										</Row>
-									}
-								</Card>
-							</Col>
-						</Row>
+						<Col md={ 12 }>
+							<Row>
+								<Col className="Skill__block" md={ 6 }>
+									<Card body>
+										<CardLabel color="success" text="熟悉" />
+										{ this.state.skills &&
+											<Row>
+												{ this.state.skills[0].map((skill, i) => (
+													<Col key={ i } className="Skill__item" xs={ 6 }>
+														<a className="Skill__text" href={ skill.link } target="_blank" rel="noopener noreferrer">{ skill.text }</a>
+													</Col>
+												)) }
+											</Row>
+										}
+									</Card>
+								</Col>
+								<Col className="Skill__block" md={ 6 }>
+									<Card body>
+										<CardLabel color="yellow" text="略懂" />
+										{this.state.skills &&
+											<Row>
+												{ this.state.skills[1].map((skill, i) => (
+													<Col key={ i } className="Skill__item" xs={ 6 }>
+														<a className="Skill__text" href={ skill.link } target="_blank" rel="noopener noreferrer">{ skill.text }</a>
+													</Col>
+												)) }
+											</Row>
+										}
+									</Card>
+								</Col>
+							</Row>
+						</Col>
 					</div>
 				</Row>
 			</Container>

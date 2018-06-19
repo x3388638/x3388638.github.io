@@ -23,7 +23,7 @@ export default class Jumbo extends React.Component {
 							<i className="fa fa-github-square"></i> GitHub
 						</a>
 						<a className="Jumbo__socialLink" href="https://www.linkedin.com/in/yuyingchang/" rel="noopener noreferrer" target="_blank">
-							<i className="fa fa-linkedin-square"></i> Linkedin
+							<i className="fa fa-linkedin-square"></i> LinkedIn
 						</a>
 						<a className="Jumbo__socialLink" href="mailto:z3388638@gmail.com">
 							<i className="fa fa-envelope-open"></i> Email

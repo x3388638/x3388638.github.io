@@ -7,6 +7,7 @@ import {
 
 import './About.css';
 import BlockTitle from "./BlockTitle";
+const ReactMarkdown = require('react-markdown');
 
 export default class About extends React.Component {
 	constructor(props) {
@@ -17,7 +18,7 @@ export default class About extends React.Component {
 	}
 
 	componentDidMount() {
-		fetch(`${ process.env.PUBLIC_URL }/content/about.txt`).then((res) => {
+		fetch(`${ process.env.PUBLIC_URL }/content/about.md`).then((res) => {
 			return res.text();
 		}).then((content) => {
 			this.setState({
@@ -36,7 +37,9 @@ export default class About extends React.Component {
 							title="關於我"
 						/>
 					</Col>
-					<div className="About__content">{ this.state.content }</div>
+					<div className="About__content">
+						<ReactMarkdown source={ this.state.content } />
+					</div>
 				</Row>
 			</Container>
 		)
