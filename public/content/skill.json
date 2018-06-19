@@ -15,43 +15,6 @@
 		{
 			"text": "jQuery",
 			"link": "https://jquery.com/"
-		},
-		{
-			"text": "AJAX",
-			"link": "https://en.wikipedia.org/wiki/Ajax_(programming)"
-		},
-		{
-			"text": "HTML",
-			"link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
-		},
-		{
-			"text": "CSS",
-			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
-
-		},
-		{
-			"text": "Bootstrap",
-			"link": "https://getbootstrap.com/"
-		},
-		{
-			"text": "Nodejs",
-			"link": "https://nodejs.org/en/"
-		},
-		{
-			"text": "WebSocket",
-			"link": "https://socket.io/"
-		},
-		{
-			"text": "Userscript",
-			"link": "https://tampermonkey.net/scripts.php?ext=dhdg&locale=en"
-		},
-		{
-			"text": "Git",
-			"link": "https://git-scm.com/"
-		},
-		{
-			"text": "Firebase",
-			"link": "https://firebase.google.com/"
 		}
 	],
 	[
@@ -66,46 +29,6 @@
 		{
 			"text": "Babel",
 			"link": "https://babeljs.io/"
-		},
-		{
-			"text": "WebRTC",
-			"link": "https://webrtc.org/"
-		},
-		{
-			"text": "web3.js",
-			"link": "https://github.com/ethereum/web3.js/"
-		},
-		{
-			"text": "Express",
-			"link": "http://expressjs.com/"
-		},
-		{
-			"text": "PM2",
-			"link": "http://pm2.keymetrics.io/"
-		},
-		{
-			"text": "Harp.js",
-			"link": "http://harpjs.com/"
-		},
-		{
-			"text": "Mongodb",
-			"link": "https://www.mongodb.com/"
-		},
-		{
-			"text": "MySQL",
-			"link": "https://www.mysql.com/"
-		},
-		{
-			"text": "Java",
-			"link": "https://java.com/"
-		},
-		{
-			"text": "PHP",
-			"link": "http://php.net/"
-		},
-		{
-			"text": "Linux server",
-			"link": "https://ccweb.ncnu.edu.tw/student/aspmaker_course_opened_detail_viewview.php?showdetail=&year=1061&courseid=135120&class=0&modal=1&rnd=128419"
 		}
 	]
 ]
