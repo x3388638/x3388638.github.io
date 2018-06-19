@@ -5,5 +5,12 @@
 		"link": "https://github.com/x3388638/KeBiau",
 		"tags": ["React", "Firebase", "Serverless"],
 		"key": "kebiau"
+	},
+	{
+		"title": "LANChat",
+		"time": "2018 年 4 月",
+		"link": "https://github.com/x3388638/LANChat",
+		"tags": ["React Native", "Android", "iOS", "Multicast", "Decentralized"],
+		"key": "lanchat"
 	}
 ]
