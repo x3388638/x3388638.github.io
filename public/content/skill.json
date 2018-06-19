@@ -17,6 +17,10 @@
 			"link": "https://jquery.com/"
 		},
 		{
+			"text": "AJAX",
+			"link": "https://en.wikipedia.org/wiki/Ajax_(programming)"
+		},
+		{
 			"text": "HTML",
 			"link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
 		},
@@ -32,6 +36,10 @@
 		{
 			"text": "Nodejs",
 			"link": "https://nodejs.org/en/"
+		},
+		{
+			"text": "WebSocket",
+			"link": "https://socket.io/"
 		},
 		{
 			"text": "Userscript",
@@ -58,6 +66,10 @@
 		{
 			"text": "Babel",
 			"link": "https://babeljs.io/"
+		},
+		{
+			"text": "WebRTC",
+			"link": "https://webrtc.org/"
 		},
 		{
 			"text": "web3.js",
