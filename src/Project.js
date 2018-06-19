@@ -61,9 +61,11 @@ export default class Project extends React.Component {
 								<Card className="ProjectItem__card" body>
 									<CardTitle className="ProjectItem__title">
 										{ project.title }
-										<a className="ProjectItem__link" href={ project.link } rel="noopener noreferrer" target="_blank">
-											<i className="fa fa-external-link" aria-hidden="true"></i>
-										</a>
+										{ project.link &&
+											<a className="ProjectItem__link" href={ project.link } rel="noopener noreferrer" target="_blank">
+												<i className="fa fa-external-link" aria-hidden="true"></i>
+											</a>
+										}
 									</CardTitle>
 									<CardSubtitle className="ProjectItem__time">
 										<i className="fa fa-clock-o" aria-hidden="true"></i> { project.time }
@@ -78,6 +80,11 @@ export default class Project extends React.Component {
 								</Card>
 							</Col>
 						))}
+					</Row>
+					<Row>
+						<Col className="Project__more">
+							更多專案請至 <a href="https://github.com/x3388638" rel="noopener noreferrer" target="_blank">GitHub</a> 或 <a href="https://gist.github.com/x3388638" rel="noopener noreferrer" target="_blank">Gist</a> 查詢
+						</Col>
 					</Row>
 				</div>
 			</Container>
