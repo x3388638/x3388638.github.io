@@ -9,19 +9,21 @@ import Education from './Education';
 import Skill from './Skill';
 import Work from './Work';
 import Project from './Project';
+import Footer from './Footer';
 
 import './App.css';
 
 export default class App extends Component {
 	render() {
 		return (
-			<Container className="Main" fluid>
+			<Container fluid>
 				<Jumbo />
 				<About />
 				<Education />
 				<Skill />
 				<Work />
 				<Project />
+				<Footer />
 			</Container>
 		);
 	}

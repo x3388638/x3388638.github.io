@@ -56,7 +56,7 @@ export default class Work extends React.Component {
 						{ this.state.works && this.state.works.map((work) => {
 							return (
 								<Col key={ work.key } className="WorkItem" md={ 12 }>
-									<Card body>
+									<Card className="WorkItem__card" body>
 										<CardTitle className="WorkItem__title">{ work.title } <span className="WorkItem__at">{ work.at }</span></CardTitle>
 										<CardSubtitle className="WorkItem__time">
 											<i className="fa fa-clock-o" aria-hidden="true"></i> {`${ work.start } - ${ work.end }`}
