@@ -37,7 +37,7 @@ Fill out the `/src/settings.js`
 
 ### 5. Update the content
 1. Change profile image at `/src/profile.jpg`
-2. Chagne favicon at `/public/favicon.ioc`
+2. Chagne favicon at `/public/favicon.ico`
 3. Update `/public/content/about.md`
 4. Update `/public/content/education.json`
 5. Update `/public/content/skill.json`
