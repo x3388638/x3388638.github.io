@@ -26,5 +26,12 @@
 		"link": "https://hackmd.io/s/SJOrobrA",
 		"tags": ["Userscript", "Telegram Bot", "Crawler"],
 		"key": "crawlpkget"
+	},
+	{
+		"title": "RO 手遊活動外掛",
+		"time": "2017 年 12 月",
+		"link": "https://hackmd.io/s/B1pB-7j-z",
+		"tags": ["Userscript", "Crawler"],
+		"key": "rouserscript"
 	}
 ]
