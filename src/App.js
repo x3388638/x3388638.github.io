@@ -8,6 +8,7 @@ import About from './About';
 import Education from './Education';
 import Skill from './Skill';
 import Work from './Work';
+import Project from './Project';
 
 import './App.css';
 
@@ -20,6 +21,7 @@ export default class App extends Component {
 				<Education />
 				<Skill />
 				<Work />
+				<Project />
 			</Container>
 		);
 	}
