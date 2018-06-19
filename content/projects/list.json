@@ -1,0 +1,51 @@
+[
+	{
+		"title": "自己的課表自己排 2.0",
+		"time": "2014 年 8 月",
+		"link": "https://github.com/x3388638/KeBiau",
+		"tags": ["React", "Bootstrap", "Firebase", "Serverless"],
+		"key": "kebiau"
+	},
+	{
+		"title": "LANChat",
+		"time": "2018 年 4 月",
+		"link": "https://github.com/x3388638/LANChat",
+		"tags": ["React Native", "Android", "iOS", "Multicast", "Decentralized"],
+		"key": "lanchat"
+	},
+	{
+		"title": "PokemonGO Map",
+		"time": "2016 年 9 月",
+		"link": "https://github.com/x3388638/PokemonMap-for-GoPatrol",
+		"tags": ["React", "Bootstrap", "GoogleMap", "Socket.io"],
+		"key": "pokemongomap"
+	},
+	{
+		"title": "大家找寶貝 (PKGET) 外掛",
+		"time": "2016 年 10 月",
+		"link": "https://hackmd.io/s/SJOrobrA",
+		"tags": ["Userscript", "Telegram Bot", "Crawler"],
+		"key": "crawlpkget"
+	},
+	{
+		"title": "RO 手遊活動外掛",
+		"time": "2017 年 12 月",
+		"link": "https://hackmd.io/s/B1pB-7j-z",
+		"tags": ["Userscript", "Crawler"],
+		"key": "rouserscript"
+	},
+	{
+		"title": "EzCast",
+		"time": "2017 年 3 月",
+		"link": "https://github.com/x3388638/EzCast_web_client",
+		"tags": ["jQuery", "Bootstrap", "Nodejs", "Multicast", "WebSocket"],
+		"key": "ezcast"
+	},
+	{
+		"title": "Coinmarketcap 爬蟲",
+		"time": "2018 年 4 月",
+		"link": "",
+		"tags": ["Nodejs", "Cheerio", "Crawler"],
+		"key": "coinmarketcapcrawler"
+	}
+]
