@@ -13,5 +13,5 @@
 
 使用技術:
 - 前端: jQuery、React、Bootstrap、WebSocket、WebRTC、web3.js、Chart.js、scalra-flexform
-- 後端: Nodejs、Express、Scalra、MongoDB
-- 其他: Shell script、Wordpress
+- 後端: Nodejs、Express、PM2、Scalra、MongoDB
+- 其他: Git、Shell script、Wordpress

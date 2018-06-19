@@ -80,6 +80,10 @@
 			"link": "http://expressjs.com/"
 		},
 		{
+			"text": "PM2",
+			"link": "http://pm2.keymetrics.io/"
+		},
+		{
 			"text": "Harp.js",
 			"link": "http://harpjs.com/"
 		},

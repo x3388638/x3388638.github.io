@@ -2,3 +2,53 @@
 	padding-top: 20px;
 	color: var(--dark);
 }
+
+.Project__content {
+	margin-left: 40px;
+}
+
+.ProjectItem {
+	margin-bottom: 10px;
+}
+
+.ProjectItem__card {
+	border-radius: 0 !important;
+	border: 0 !important;
+	border-right: 5px solid #d3d3d3 !important;
+	background: #fbfbfb !important;
+    padding-right: 50px;
+	transition: .4s all;
+}
+
+.ProjectItem__card:hover {
+	box-shadow: 0 0 5px 0;
+	background: #fff !important;
+}
+
+.ProjectItem__link {
+	font-size: 18px;
+	margin-bottom: 10px !important;
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+.ProjectItem__link::after {
+	content: '專案連結';
+	opacity: 0.1;
+	margin-left: 5px;
+	transition: .3s all;
+}
+
+.ProjectItem__card:hover .ProjectItem__link::after {
+	opacity: 1;
+}
+
+.ProjectItem__time {
+	font-size: 16px;
+	margin-bottom: 10px !important;
+	font-weight: 300;
+}
+
+.ProjectItem__tag {
+	margin-right: 5px;
+}
