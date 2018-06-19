@@ -10,6 +10,21 @@ import BlockTitle from './BlockTitle';
 import './Education.css';
 
 export default class Education extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			education: null
+		};
+	}
+
+	componentDidMount() {
+		fetch(`${ process.env.PUBLIC_URL }/content/education.json`).then(res => res.json()).then((education) => {
+			this.setState({
+				education
+			});
+		});
+	}
+
 	render() {
 		return (
 			<Container className="Education">
@@ -21,20 +36,15 @@ export default class Education extends React.Component {
 						/>
 					</Col>
 					<div className="Education__content">
-						<div className="Education__item">
-							<h5 className="Education__school">國立暨南國際大學</h5>
-							<span className="Education__time">
-								<i className="fa fa-clock-o" aria-hidden="true"></i> 2016-2018
-							</span><br />
-							資訊管理研究所 碩士
-						</div>
-						<div className="Education__item">
-							<h5 className="Education__school">國立暨南國際大學</h5>
-							<span className="Education__time">
-								<i className="fa fa-clock-o" aria-hidden="true"></i> 2012-2016
-							</span><br />
-							資訊管理學系 學士
-						</div>
+						{ this.state.education && this.state.education.map((education, i) => (
+							<div key={ i } className="Education__item">
+								<h5 className="Education__school">{ education.school }</h5>
+								<span className="Education__time">
+										<i className="fa fa-clock-o" aria-hidden="true"></i> { education.start } - { education.end }
+								</span><br />
+								{ education.dept } { education.degree }
+							</div>
+						)) }
 					</div>
 				</Row>
 			</Container>

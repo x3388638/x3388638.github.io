@@ -11,6 +11,7 @@ import {
 import BlockTitle from './BlockTitle';
 
 import './Project.css';
+import SETTINGS from './settings';
 
 const ReactMarkdown = require('react-markdown');
 
@@ -81,11 +82,13 @@ export default class Project extends React.Component {
 							</Col>
 						))}
 					</Row>
-					<Row>
-						<Col className="Project__more">
-							更多專案請至 <a href="https://github.com/x3388638" rel="noopener noreferrer" target="_blank">GitHub</a> 或 <a href="https://gist.github.com/x3388638" rel="noopener noreferrer" target="_blank">Gist</a> 查詢
-						</Col>
-					</Row>
+					{ SETTINGS.githubAccount && 
+						<Row>
+							<Col className="Project__more">
+								歡迎至 <a href={ `https://github.com/${ SETTINGS.githubAccount }` } rel="noopener noreferrer" target="_blank">GitHub</a> 或 <a href={ `https://gist.github.com/${ SETTINGS.githubAccount }` } rel="noopener noreferrer" target="_blank">Gist</a> 查詢更多專案
+							</Col>
+						</Row>
+					}
 				</div>
 			</Container>
 		)

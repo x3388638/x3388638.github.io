@@ -6,6 +6,7 @@ import {
 
 import './Jumbo.css';
 import ProfileImg from './profile.jpg';
+import SETTINGS from './settings';
 
 export default class Jumbo extends React.Component {
 	render() {
@@ -15,19 +16,27 @@ export default class Jumbo extends React.Component {
 					<div>
 						<img className="Jumbo__profileImg" src={ ProfileImg } alt="profile" />
 					</div>
-					<div className="Jumbo__name">
-						<span>Y.Y. Chang</span>
-					</div>
+					{ SETTINGS.name &&
+						<div className="Jumbo__name">
+							<span>{ SETTINGS.name }</span>
+						</div>
+					}
 					<div>
-						<a className="Jumbo__socialLink" href="https://github.com/x3388638" rel="noopener noreferrer" target="_blank">
-							<i className="fa fa-github-square"></i> GitHub
-						</a>
-						<a className="Jumbo__socialLink" href="https://www.linkedin.com/in/yuyingchang/" rel="noopener noreferrer" target="_blank">
-							<i className="fa fa-linkedin-square"></i> LinkedIn
-						</a>
-						<a className="Jumbo__socialLink" href="mailto:z3388638@gmail.com">
-							<i className="fa fa-envelope-open"></i> Email
-						</a>
+						{ SETTINGS.githubAccount &&
+							<a className="Jumbo__socialLink" href={ `https://github.com/${ SETTINGS.githubAccount }` } rel="noopener noreferrer" target="_blank">
+								<i className="fa fa-github-square"></i> GitHub
+							</a>
+						}
+						{ SETTINGS.linkedinURL &&
+							<a className="Jumbo__socialLink" href={ SETTINGS.linkedinURL } rel="noopener noreferrer" target="_blank">
+								<i className="fa fa-linkedin-square"></i> LinkedIn
+							</a>
+						}
+						{ SETTINGS.email && 
+							<a className="Jumbo__socialLink" href={ `mailto:${ SETTINGS.email }` }>
+								<i className="fa fa-envelope-open"></i> Email
+							</a>
+						}
 					</div>
 				</Col>
 			</Row>
