@@ -7,4 +7,4 @@
 - [應繳資料下載系統](https://github.com/0verseas/0verPick)
 
 使用技術:
-- React、jQuery、Bootstrap、Harp.js、ejs
+- React、Babel、Webpack、jQuery、Bootstrap、Harp.js、ejs

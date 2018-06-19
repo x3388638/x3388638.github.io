@@ -24,7 +24,7 @@ export default class Work extends React.Component {
 	componentDidMount() {
 		let works = [];
 		fetch(`${ process.env.PUBLIC_URL }/content/works/list.json`).then(res => res.json()).then((list) => {
-			[...Array(list.length)].reduce((p, _, i) => {
+			list.reduce((p, _, i) => {
 				return p.then(() => {
 					return new Promise((resolve) => {
 						const workData = list[i];
