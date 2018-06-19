@@ -12,5 +12,12 @@
 		"link": "https://github.com/x3388638/LANChat",
 		"tags": ["React Native", "Android", "iOS", "Multicast", "Decentralized"],
 		"key": "lanchat"
+	},
+	{
+		"title": "PokemonGO Map",
+		"time": "2016 年 9 月",
+		"link": "https://github.com/x3388638/PokemonMap-for-GoPatrol",
+		"tags": ["React", "GoogleMap", "Socket.io"],
+		"key": "pokemongomap"
 	}
 ]
