@@ -19,5 +19,12 @@
 		"link": "https://github.com/x3388638/PokemonMap-for-GoPatrol",
 		"tags": ["React", "GoogleMap", "Socket.io"],
 		"key": "pokemongomap"
+	},
+	{
+		"title": "大家找寶貝 (PKGET) 外掛",
+		"time": "2016 年 10 月",
+		"link": "https://hackmd.io/s/SJOrobrA",
+		"tags": ["Userscript", "Telegram Bot", "Crawler"],
+		"key": "crawlpkget"
 	}
 ]
