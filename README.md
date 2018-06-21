@@ -1,6 +1,28 @@
 # Personal site template
 因為想做個個人網站但找不到喜歡的樣板，那就自己刻吧💪
 
+## Demo
+https://x3388638.github.io/
+
+## Screenshot
+![](https://i.imgur.com/MaCJWFy.png)
+- Profile image
+- Social media link
+- About
+- Education
+
+<hr>
+
+![](https://i.imgur.com/N4vClhf.png)
+- Skill
+- Work
+
+<hr>
+
+![](https://i.imgur.com/LOYXIve.png)
+- Project
+- Footer
+
 ## Installation
 ### 1. Clone
 ```
