@@ -1,5 +1,5 @@
 **暨大專屬排課表、換課、課程評價平台**  
-使用 React 打造的 SPA，透過 Userscript 於學校教務系統網頁爬取課程列表與資訊且存入 Firevase，並架設於 GitHub Page，  
+使用 React 打造的 SPA，透過 Userscript 於學校教務系統網頁爬取課程列表與資訊且存入 Firebase，並架設於 GitHub Page，  
 為了改善學校教務系統內建課表可讀性之缺失，  
 以及減輕課表繪製所花費之青春。  
   
