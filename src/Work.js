@@ -7,7 +7,9 @@ import {
 	CardTitle,
 	CardSubtitle
 } from 'reactstrap';
+
 import BlockTitle from './BlockTitle';
+import Loading from './Loading';
 
 import './Work.css';
 
@@ -55,6 +57,9 @@ export default class Work extends React.Component {
 				</Row>
 				<div className="Work__content">
 					<Row>
+						{ !this.state.works &&
+							<Loading />
+						}
 						{ this.state.works && this.state.works.map((work) => {
 							return (
 								<Col key={ work.key } className="WorkItem" md={ 12 }>

@@ -6,6 +6,7 @@ import {
 } from 'reactstrap';
 
 import BlockTitle from './BlockTitle';
+import Loading from './Loading';
 
 import './Education.css';
 
@@ -36,6 +37,9 @@ export default class Education extends React.Component {
 						/>
 					</Col>
 					<div className="Education__content">
+						{ !this.state.education &&
+							<Loading />
+						}
 						{ this.state.education && this.state.education.map((education, i) => (
 							<div key={ i } className="Education__item">
 								<h5 className="Education__school">{ education.school }</h5>
