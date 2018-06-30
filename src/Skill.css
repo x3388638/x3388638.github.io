@@ -68,3 +68,9 @@
 .Skill__text:hover {
 	background: #f3f3f3;
 }
+
+@media only screen and (max-width: 576px) {
+    .Skill__content {
+        margin-left: 0;
+    }
+}

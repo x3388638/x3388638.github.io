@@ -22,3 +22,9 @@
 	margin-left: 10px;
 	font-size: 14px;
 }
+
+@media only screen and (max-width: 576px) {
+    .Education__content {
+        margin-left: 0;
+    }
+}
