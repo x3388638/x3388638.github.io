@@ -6,7 +6,10 @@ import {
 } from 'reactstrap';
 
 import './About.css';
+
 import BlockTitle from "./BlockTitle";
+import Loading from './Loading';
+
 const ReactMarkdown = require('react-markdown');
 
 export default class About extends React.Component {
@@ -37,9 +40,16 @@ export default class About extends React.Component {
 							title="關於我"
 						/>
 					</Col>
-					<div className="About__content">
-						<ReactMarkdown source={ this.state.content } />
-					</div>
+				</Row>
+				<Row>
+					<Col>
+						<div className="About__content">
+							{ !this.state.content &&
+								<Loading />
+							}
+							<ReactMarkdown source={this.state.content} />
+						</div>
+					</Col>
 				</Row>
 			</Container>
 		)

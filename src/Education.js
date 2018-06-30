@@ -36,20 +36,24 @@ export default class Education extends React.Component {
 							title="學歷"
 						/>
 					</Col>
-					<div className="Education__content">
-						{ !this.state.education &&
-							<Loading />
-						}
-						{ this.state.education && this.state.education.map((education, i) => (
-							<div key={ i } className="Education__item">
-								<h5 className="Education__school">{ education.school }</h5>
-								<span className="Education__time">
-										<i className="fa fa-clock-o" aria-hidden="true"></i> { education.start } - { education.end }
-								</span><br />
-								{ education.dept } { education.degree }
-							</div>
-						)) }
-					</div>
+				</Row>
+				<Row>
+					<Col>
+						<div className="Education__content">
+							{ !this.state.education &&
+								<Loading />
+							}
+							{ this.state.education && this.state.education.map((education, i) => (
+								<div key={i} className="Education__item">
+									<h5 className="Education__school">{education.school}</h5>
+									<span className="Education__time">
+										<i className="fa fa-clock-o" aria-hidden="true"></i> {education.start} - {education.end}
+									</span><br />
+									{education.dept} {education.degree}
+								</div>
+							))}
+						</div>
+					</Col>
 				</Row>
 			</Container>
 		)
