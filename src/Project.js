@@ -8,7 +8,9 @@ import {
 	CardSubtitle,
 	Badge
 } from 'reactstrap';
+
 import BlockTitle from './BlockTitle';
+import Loading from './Loading';
 
 import './Project.css';
 import SETTINGS from './settings';
@@ -57,6 +59,9 @@ export default class Project extends React.Component {
 				</Row>
 				<div className="Project__content">
 					<Row>
+						{ !this.state.projects &&
+							<Loading />
+						}
 						{ this.state.projects && this.state.projects.map((project) => (
 							<Col key={ project.key } className="ProjectItem" md={ 12 }>
 								<Card className="ProjectItem__card" body>

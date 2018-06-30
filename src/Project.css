@@ -56,3 +56,9 @@
 .Project__more {
 	text-align: center;
 }
+
+@media only screen and (max-width: 576px) {
+    .Project__content {
+        margin-left: 0;
+    }
+}

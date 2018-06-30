@@ -7,3 +7,9 @@
 	white-space: pre-line;
 	margin-left: 40px;
 }
+
+@media only screen and (max-width: 576px) {
+    .About__content {
+        margin-left: 0;
+    }
+}
