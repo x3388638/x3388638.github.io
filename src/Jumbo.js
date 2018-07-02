@@ -3,43 +3,80 @@ import {
 	Row,
 	Col
 } from 'reactstrap';
+import styled from 'styled-components';
 
-import './Jumbo.css';
 import ProfileImg from './profile.jpg';
 import SETTINGS from './settings';
+
+const JumboWrapper = styled(Row)`
+	background: var(--dark);
+	padding-top: 120px;
+	padding-bottom: 30px;
+`;
+
+const JumboContainer = styled(Col)`
+	text-align: center;
+`;
+
+const JumboProfileImg = styled.img`
+	height: 180px;
+	border-radius: 120px;
+	box-shadow: 0 0 20px 5px;
+`;
+
+const JumboName = styled.div`
+	margin-top: 15px;
+	margin-bottom: 30px;
+	color: var(--light);
+	font-size:30px;
+`;
+
+const JumboSocialLink = styled.a`
+	&,
+	&:hover,
+	&:visited {
+		display: inline-block;
+		color: var(--light);
+		font-size: 14px;
+		font-weight: 100;
+		margin-left: 10px;
+		margin-right: 10px;
+		text-decoration: none;
+	}
+`;
 
 export default class Jumbo extends React.Component {
 	render() {
 		return (
-			<Row className="Jumbo">
-				<Col className="Jumbo__container" md={ 12 }>
+			<JumboWrapper>
+				<JumboContainer md={ 12 }>
 					<div>
-						<img className="Jumbo__profileImg" src={ ProfileImg } alt="profile" />
+						<JumboProfileImg src={ ProfileImg } alt="profile" />
 					</div>
 					{ SETTINGS.name &&
-						<div className="Jumbo__name">
+						<JumboName>
 							<span>{ SETTINGS.name }</span>
-						</div>
+						</JumboName>
 					}
 					<div>
 						{ SETTINGS.githubAccount &&
-							<a className="Jumbo__socialLink" href={ `https://github.com/${ SETTINGS.githubAccount }` } rel="noopener noreferrer" target="_blank">
+							<JumboSocialLink href={ `https://github.com/${ SETTINGS.githubAccount }` } rel="noopener noreferrer" target="_blank">
 								<i className="fa fa-github-square"></i> GitHub
-							</a>
+							</JumboSocialLink>
 						}
 						{ SETTINGS.linkedinURL &&
-							<a className="Jumbo__socialLink" href={ SETTINGS.linkedinURL } rel="noopener noreferrer" target="_blank">
+							<JumboSocialLink href={ SETTINGS.linkedinURL } rel="noopener noreferrer" target="_blank">
 								<i className="fa fa-linkedin-square"></i> LinkedIn
-							</a>
+							</JumboSocialLink>
 						}
 						{ SETTINGS.email && 
-							<a className="Jumbo__socialLink" href={ `mailto:${ SETTINGS.email }` }>
+							<JumboSocialLink href={ `mailto:${ SETTINGS.email }` }>
 								<i className="fa fa-envelope-open"></i> Email
-							</a>
+							</JumboSocialLink>
 						}
 					</div>
-				</Col>
-			</Row>
+				</JumboContainer>
+			</JumboWrapper>
 		);
 	}
 }
