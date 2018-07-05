@@ -4,13 +4,25 @@ import {
 	Row,
 	Col
 } from 'reactstrap';
-
-import './About.css';
+import styled from 'styled-components';
 
 import BlockTitle from "./BlockTitle";
 import Loading from './Loading';
 
 const ReactMarkdown = require('react-markdown');
+
+const AboutWarpper = styled(Container)`
+	padding-top: 20px;
+	color: var(--dark);
+`;
+
+const AboutContent = styled.div`
+	white-space: pre-line;
+	margin-left: 40px;
+	@media (max-width: 576px) {
+		margin-left: 0;
+	}
+`;
 
 export default class About extends React.Component {
 	constructor(props) {
@@ -32,7 +44,7 @@ export default class About extends React.Component {
 
 	render() {
 		return (
-			<Container className="About">
+			<AboutWarpper>
 				<Row>
 					<Col md={ 12 }>
 						<BlockTitle
@@ -43,15 +55,15 @@ export default class About extends React.Component {
 				</Row>
 				<Row>
 					<Col>
-						<div className="About__content">
+						<AboutContent>
 							{ !this.state.content &&
 								<Loading />
 							}
 							<ReactMarkdown source={this.state.content} />
-						</div>
+						</AboutContent>
 					</Col>
 				</Row>
-			</Container>
+			</AboutWarpper>
 		)
 	}
 }
