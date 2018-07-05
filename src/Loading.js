@@ -1,19 +1,23 @@
 import React from 'react';
 import { PulseLoader } from 'react-spinners';
+import styled from 'styled-components';
 
-import './Loading.css';
+const LoadingWrapper = styled.div`
+	width: 100%;
+	text-align: center;
+`;
 
 export default class Loading extends React.Component {
 	render() {
 		return (
-			<div className="Loading">
+			<LoadingWrapper>
 				<PulseLoader
 					loading
 					color="#d3d3d3"
 					size={ 12 }
 					margin="5px"
 				/>
-			</div>
+			</LoadingWrapper>
 		)
 	}
 }

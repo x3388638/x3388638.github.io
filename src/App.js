@@ -11,8 +11,6 @@ import Work from './Work';
 import Project from './Project';
 import Footer from './Footer';
 
-import './App.css';
-
 export default class App extends Component {
 	render() {
 		return (
