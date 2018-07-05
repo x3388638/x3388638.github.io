@@ -4,11 +4,37 @@ import {
 	Row,
 	Col
 } from 'reactstrap';
+import styled from 'styled-components';
 
 import BlockTitle from './BlockTitle';
 import Loading from './Loading';
 
-import './Education.css';
+const EducationWrapper = styled(Container)`
+	padding-top: 20px;
+	color: var(--dark);
+`;
+
+const EducationContenr = styled.div`
+	margin-left: 40px;
+	@media (max-width: 576px) {
+		margin-left: 0;
+	}
+`;
+
+const EducationItem = styled.div`
+	padding-left: 10px;
+	border-left: 4px solid #d3d3d3;
+	margin-bottom: 10px;
+`;
+
+const EducationSchool = styled.h5`
+	display: inline;
+`;
+
+const EducationTime = styled.span`
+	margin-left: 10px;
+	font-size: 14px;
+`;
 
 export default class Education extends React.Component {
 	constructor(props) {
@@ -28,7 +54,7 @@ export default class Education extends React.Component {
 
 	render() {
 		return (
-			<Container className="Education">
+			<EducationWrapper>
 				<Row>
 					<Col md={ 12 }>
 						<BlockTitle
@@ -39,23 +65,23 @@ export default class Education extends React.Component {
 				</Row>
 				<Row>
 					<Col>
-						<div className="Education__content">
+						<EducationContenr>
 							{ !this.state.education &&
 								<Loading />
 							}
 							{ this.state.education && this.state.education.map((education, i) => (
-								<div key={i} className="Education__item">
-									<h5 className="Education__school">{education.school}</h5>
-									<span className="Education__time">
+								<EducationItem key={i}>
+									<EducationSchool>{education.school}</EducationSchool>
+									<EducationTime>
 										<i className="fa fa-clock-o" aria-hidden="true"></i> {education.start} - {education.end}
-									</span><br />
+									</EducationTime><br />
 									{education.dept} {education.degree}
-								</div>
+								</EducationItem>
 							))}
-						</div>
+						</EducationContenr>
 					</Col>
 				</Row>
-			</Container>
+			</EducationWrapper>
 		)
 	}
 }
