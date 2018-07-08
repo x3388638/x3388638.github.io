@@ -51,7 +51,6 @@ ProjectItem.Card = styled(Card)`
 	border: 0 !important;
 	border-right: 5px solid #d3d3d3 !important;
 	background: #fbfbfb !important;
-    padding-right: 50px;
 	transition: .4s all;
 	&:hover {
 		box-shadow: 0 0 5px 0;

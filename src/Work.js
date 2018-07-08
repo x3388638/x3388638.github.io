@@ -35,7 +35,6 @@ WorkItem.Card = styled(Card)`
 	border: 0 !important;
 	border-left: 5px solid #d3d3d3 !important;
 	background: #fbfbfb !important;
-    padding-left: 50px;
 	transition: .4s all;
 	&:hover {
 		box-shadow: 0 0 5px 0;
