@@ -5,7 +5,6 @@ import {
 } from 'reactstrap';
 import styled from 'styled-components';
 
-import ProfileImg from './profile.jpg';
 import SETTINGS from './settings';
 
 const JumboWrapper = styled(Row)`
@@ -51,7 +50,7 @@ export default class Jumbo extends React.Component {
 			<JumboWrapper>
 				<JumboContainer md={ 12 }>
 					<div>
-						<JumboProfileImg src={ ProfileImg } alt="profile" />
+						<JumboProfileImg src={`${ process.env.PUBLIC_URL }/profile.jpg`} alt="profile" />
 					</div>
 					{ SETTINGS.name &&
 						<JumboName>
