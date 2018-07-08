@@ -27,7 +27,10 @@
 		{
 			"text": "CSS",
 			"link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
-
+		},
+		{
+			"text": "styled-components",
+			"link": "https://www.styled-components.com/"
 		},
 		{
 			"text": "Bootstrap",

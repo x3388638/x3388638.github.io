@@ -63,6 +63,9 @@ const  SkillBlock = styled(Col)`
 
 const SkillItem = styled(Col)`
 	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 const SkillText = styled.a`
@@ -115,9 +118,9 @@ export default class Skill extends React.Component {
 											{ this.state.skills &&
 												<Row>
 													{ this.state.skills[0].map((skill, i) => (
-														<Col key={i} className="Skill__item" xs={6}>
-															<a className="Skill__text" href={skill.link} target="_blank" rel="noopener noreferrer">{skill.text}</a>
-														</Col>
+														<SkillItem key={i} xs={6}>
+															<SkillText href={skill.link} target="_blank" rel="noopener noreferrer">{skill.text}</SkillText>
+														</SkillItem>
 													))}
 												</Row>
 											}
