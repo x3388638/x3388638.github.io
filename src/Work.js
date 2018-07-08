@@ -7,13 +7,53 @@ import {
 	CardTitle,
 	CardSubtitle
 } from 'reactstrap';
+import styled from 'styled-components';
 
 import BlockTitle from './BlockTitle';
 import Loading from './Loading';
 
-import './Work.css';
-
 const ReactMarkdown = require('react-markdown');
+
+const WorkWrapper = styled(Container)`
+	padding-top: 20px;
+	color: var(--dark);
+`;
+
+const WorkContent = styled.div`
+	margin-left: 40px;
+	@media (max-width: 576px) {
+		margin-left: 0
+	}
+`;
+
+const WorkItem = styled(Col)`
+	margin-bottom: 10px;
+`;
+
+WorkItem.Card = styled(Card)`
+	border-radius: 0 !important;
+	border: 0 !important;
+	border-left: 5px solid #d3d3d3 !important;
+	background: #fbfbfb !important;
+    padding-left: 50px;
+	transition: .4s all;
+	&:hover {
+		box-shadow: 0 0 5px 0;
+		background: #fff !important;
+	}
+`;
+
+WorkItem.At = styled.span`
+	font-size: 18px;
+	margin-bottom: 10px !important;
+	font-weight: 400;
+`;
+
+WorkItem.Time = styled(CardSubtitle)`
+	font-size: 16px;
+	margin-bottom: 10px !important;
+	font-weight: 300;
+`;
 
 export default class Work extends React.Component {
 	constructor(props) {
@@ -46,7 +86,7 @@ export default class Work extends React.Component {
 
 	render() {
 		return (
-			<Container className="Work">
+			<WorkWrapper>
 				<Row>
 					<Col md={ 12 }>
 						<BlockTitle
@@ -55,28 +95,28 @@ export default class Work extends React.Component {
 						/>
 					</Col>
 				</Row>
-				<div className="Work__content">
+				<WorkContent>
 					<Row>
 						{ !this.state.works &&
 							<Loading />
 						}
 						{ this.state.works && this.state.works.map((work) => {
 							return (
-								<Col key={ work.key } className="WorkItem" md={ 12 }>
-									<Card className="WorkItem__card" body>
-										<CardTitle className="WorkItem__title">{ work.title } <span className="WorkItem__at">{ work.at }</span></CardTitle>
-										<CardSubtitle className="WorkItem__time">
+								<WorkItem key={ work.key } md={ 12 }>
+									<WorkItem.Card body>
+										<CardTitle>{ work.title } <WorkItem.At>{ work.at }</WorkItem.At></CardTitle>
+										<WorkItem.Time>
 											<i className="fa fa-clock-o" aria-hidden="true"></i> {`${ work.start } - ${ work.end }`}
-										</CardSubtitle>
+										</WorkItem.Time>
 										<hr />
 										<ReactMarkdown source={ work.desc } />
-									</Card>
-								</Col>
+									</WorkItem.Card>
+								</WorkItem>
 							)
 						})}
 					</Row>
-				</div>
-			</Container>
+				</WorkContent>
+			</WorkWrapper>
 		)
 	}
 }
