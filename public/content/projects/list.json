@@ -35,10 +35,10 @@
 		"key": "rouserscript"
 	},
 	{
-		"title": "Personal site template",
+		"title": "個人網頁模版",
 		"time": "2018 年 6 月",
 		"link": "https://github.com/x3388638/x3388638.github.io",
-		"tags": ["React", "Bootstrap"],
+		"tags": ["React", "Bootstrap", "styled-components"],
 		"key": "personalsite"
 	},
 	{
