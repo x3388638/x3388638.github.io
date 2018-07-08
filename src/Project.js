@@ -8,14 +8,73 @@ import {
 	CardSubtitle,
 	Badge
 } from 'reactstrap';
+import styled from 'styled-components';
 
 import BlockTitle from './BlockTitle';
 import Loading from './Loading';
 
-import './Project.css';
 import SETTINGS from './settings';
 
 const ReactMarkdown = require('react-markdown');
+
+const ProjectWrapper = styled(Container)`
+	padding-top: 20px;
+	color: var(--dark);
+`;
+
+const ProjectContent = styled.div`
+	margin-left: 40px;
+	@media (max-width: 576px) {
+		margin-left: 0;
+	}
+`;
+
+const ProjectItem = styled(Col)`
+	margin-bottom: 10px;
+`;
+
+ProjectItem.Link = styled.a`
+	font-size: 18px;
+	margin-bottom: 10px !important;
+	font-weight: 400;
+	margin-left: 10px;
+	&::after {
+		content: '專案連結';
+		opacity: 0.1;
+		margin-left: 5px;
+		transition: .3s all;
+	}
+`;
+
+ProjectItem.Card = styled(Card)`
+	border-radius: 0 !important;
+	border: 0 !important;
+	border-right: 5px solid #d3d3d3 !important;
+	background: #fbfbfb !important;
+    padding-right: 50px;
+	transition: .4s all;
+	&:hover {
+		box-shadow: 0 0 5px 0;
+		background: #fff !important;
+		${ ProjectItem.Link }::after {
+			opacity: 1;
+		}
+	}
+`;
+
+ProjectItem.Time = styled(CardSubtitle)`
+	ont-size: 16px;
+	margin-bottom: 10px !important;
+	font-weight: 300;
+`;
+
+ProjectItem.Tag = styled(Badge)`
+	margin-right: 5px;
+`;
+
+const ProjectMore = styled(Col)`
+	text-align: center;
+`;
 
 export default class Project extends React.Component {
 	constructor(props) {
@@ -48,7 +107,7 @@ export default class Project extends React.Component {
 
 	render() {
 		return (
-			<Container className="Project">
+			<ProjectWrapper>
 				<Row>
 					<Col>
 						<BlockTitle
@@ -57,45 +116,45 @@ export default class Project extends React.Component {
 						/>
 					</Col>
 				</Row>
-				<div className="Project__content">
+				<ProjectContent>
 					<Row>
 						{ !this.state.projects &&
 							<Loading />
 						}
 						{ this.state.projects && this.state.projects.map((project) => (
-							<Col key={ project.key } className="ProjectItem" md={ 12 }>
-								<Card className="ProjectItem__card" body>
-									<CardTitle className="ProjectItem__title">
+							<ProjectItem key={ project.key } md={ 12 }>
+								<ProjectItem.Card body>
+									<CardTitle>
 										{ project.title }
 										{ project.link &&
-											<a className="ProjectItem__link" href={ project.link } rel="noopener noreferrer" target="_blank">
+											<ProjectItem.Link href={ project.link } rel="noopener noreferrer" target="_blank">
 												<i className="fa fa-external-link" aria-hidden="true"></i>
-											</a>
+											</ProjectItem.Link>
 										}
 									</CardTitle>
-									<CardSubtitle className="ProjectItem__time">
+									<ProjectItem.Time>
 										<i className="fa fa-clock-o" aria-hidden="true"></i> { project.time }
-								</CardSubtitle>
-									<div className="ProjectItem__tagContainer">
+									</ProjectItem.Time>
+									<div>
 										{ project.tags.map((tag) => (
-											<Badge key={ tag } className="ProjectItem__tag" color="dark" pill>{ tag }</Badge>
+											<ProjectItem.Tag key={ tag } color="dark" pill>{ tag }</ProjectItem.Tag>
 										)) }
 									</div>
 									<hr />
 									<ReactMarkdown source={ project.desc } />
-								</Card>
-							</Col>
+								</ProjectItem.Card>
+							</ProjectItem>
 						))}
 					</Row>
 					{ SETTINGS.githubAccount && 
 						<Row>
-							<Col className="Project__more">
+							<ProjectMore className="Project__more">
 								歡迎至 <a href={ `https://github.com/${ SETTINGS.githubAccount }` } rel="noopener noreferrer" target="_blank">GitHub</a> 或 <a href={ `https://gist.github.com/${ SETTINGS.githubAccount }` } rel="noopener noreferrer" target="_blank">Gist</a> 查詢更多專案
-							</Col>
+							</ProjectMore>
 						</Row>
 					}
-				</div>
-			</Container>
+				</ProjectContent>
+			</ProjectWrapper>
 		)
 	}
 }
