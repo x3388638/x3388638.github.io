@@ -44,7 +44,45 @@ const JumboSocialLink = styled.a`
 	}
 `;
 
+const CalendarContainer = styled.div`
+	margin-top: 20px;
+	@media (max-width: 750px) {
+		display: none;
+	}
+`;
+
+const CalendarText = styled.div`
+	color: #696969;
+	font-size: 12px;
+	@media (max-width: 750px) {
+		display: none;
+	}
+`;
+
 export default class Jumbo extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			calendar: null
+		};
+
+		this.getCalendar = this.getCalendar.bind(this);
+	}
+
+	componentDidMount() {
+		this.getCalendar();
+	}
+
+	getCalendar() {
+		fetch(`https://moli.rocks:774/graph/${ SETTINGS.githubAccount }`)
+			.then((res) => res.text())
+			.then((calendar) => {
+				this.setState({
+					calendar
+				});
+			});
+	}
+
 	render() {
 		return (
 			<JumboWrapper>
@@ -75,6 +113,12 @@ export default class Jumbo extends React.Component {
 						}
 					</div>
 				</JumboContainer>
+				{ this.state.calendar &&
+					<JumboContainer md={ 12 }>
+						<CalendarContainer dangerouslySetInnerHTML={{ __html: this.state.calendar }} />
+						<CalendarText>GitHub Contribution</CalendarText>
+					</JumboContainer>
+				}
 			</JumboWrapper>
 		);
 	}
