@@ -28,6 +28,13 @@
 		"key": "crawlpkget"
 	},
 	{
+		"title": "github-calendar-graph",
+		"time": "2018 年 7 月",
+		"link": "https://github.com/x3388638/github-calendar-graph",
+		"tags": ["Node.js", "Cheerio", "Crawler", "npm package"],
+		"key": "github-calendar-graph"
+	},
+	{
 		"title": "RO 手遊活動外掛",
 		"time": "2017 年 12 月",
 		"link": "https://hackmd.io/s/B1pB-7j-z",
