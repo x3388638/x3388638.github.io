@@ -81,12 +81,14 @@ export default class Project extends React.Component {
 		this.state = {
 			projects: null
 		};
+
+		this.getRepo = this.getRepo.bind(this);
 	}
 
 	componentDidMount() {
 		let projects = [];
 		fetch(`${ process.env.PUBLIC_URL }/content/projects/list.json`).then(res => res.json()).then((list) => {
-			list.reduce((p, projectData, i) => {
+			list.reduce((p, projectData) => {
 				return p.then(() => {
 					return new Promise((resolve) => {
 						fetch(`${ process.env.PUBLIC_URL }/content/projects/${ projectData.key }.md`).then(res => res.text()).then((desc) => {
@@ -97,10 +99,37 @@ export default class Project extends React.Component {
 					});
 				});
 			}, Promise.resolve()).then(() => {
+				// get github stars & forks
+				this.getRepo(projects);
 				this.setState({
 					projects
 				});
 			});
+		});
+	}
+
+	getRepo(oriProjects = this.state.projects) {
+		const projects = [];
+		oriProjects.reduce((p, projectData) => {
+			return p.then(() => new Promise((resolve) => {
+				const match = projectData.link.match(/^http(s)?:\/\/github.com\/([a-zA-Z0-9]*)\/([a-zA-Z0-9\-_.]*)(\/)?$/);
+				if (match) {
+					const [,, owner, repo] = match;
+					fetch(`https://api.github.com/repos/${ owner }/${ repo }`).then(res => res.json()).then((repoData) => {
+						projectData.stars = repoData.stargazers_count;
+						projectData.forks = repoData.forks_count;
+						projects.push(projectData);
+						resolve();
+					});
+
+					return;
+				}
+
+				projects.push(projectData);
+				resolve();
+			}));
+		}, Promise.resolve()).then(() => {
+			console.log(projects);
 		});
 	}
 
@@ -134,6 +163,11 @@ export default class Project extends React.Component {
 									<ProjectItem.Time>
 										<i className="fa fa-clock-o" aria-hidden="true"></i> { project.time }
 									</ProjectItem.Time>
+									<div>
+										<i className="fa fa-github" aria-hidden="true"></i>
+										<small><i className="fa fa-star" aria-hidden="true"></i> 15</small>
+										<small><i className="fa fa-code-fork" aria-hidden="true"></i> 15</small>
+									</div>
 									<div>
 										{ project.tags.map((tag) => (
 											<ProjectItem.Tag key={ tag } color="dark" pill>{ tag }</ProjectItem.Tag>
