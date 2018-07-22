@@ -62,9 +62,20 @@ ProjectItem.Card = styled(Card)`
 `;
 
 ProjectItem.Time = styled(CardSubtitle)`
-	ont-size: 16px;
-	margin-bottom: 10px !important;
+	font-size: 16px;
 	font-weight: 300;
+`;
+
+ProjectItem.RepoCounter = styled.span`
+	margin-right: 5px;
+	i {
+		font-size: 12px;
+		margin-right: 1px;
+	}
+`;
+
+ProjectItem.TagContainer = styled.div`
+	margin-top: 10px;
 `;
 
 ProjectItem.Tag = styled(Badge)`
@@ -75,7 +86,7 @@ const ProjectMore = styled(Col)`
 	text-align: center;
 `;
 
-export default class Project extends React.Component {
+export default class Project extends React.PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -129,7 +140,9 @@ export default class Project extends React.Component {
 				resolve();
 			}));
 		}, Promise.resolve()).then(() => {
-			console.log(projects);
+			this.setState({
+				projects
+			});
 		});
 	}
 
@@ -163,16 +176,18 @@ export default class Project extends React.Component {
 									<ProjectItem.Time>
 										<i className="fa fa-clock-o" aria-hidden="true"></i> { project.time }
 									</ProjectItem.Time>
-									<div>
-										<i className="fa fa-github" aria-hidden="true"></i>
-										<small><i className="fa fa-star" aria-hidden="true"></i> 15</small>
-										<small><i className="fa fa-code-fork" aria-hidden="true"></i> 15</small>
-									</div>
-									<div>
+									{ project.stars !== undefined && (project.stars !== 0 || project.forks !== 0) &&
+										<div>
+											<i className="fa fa-github" aria-hidden="true"></i>{' '}
+											{ project.stars !== 0 && <ProjectItem.RepoCounter><i className="fa fa-star" aria-hidden="true"></i>{ project.stars }</ProjectItem.RepoCounter>}
+											{ project.forks !== 0 && <ProjectItem.RepoCounter><i className="fa fa-code-fork" aria-hidden="true"></i>{project.forks }</ProjectItem.RepoCounter>}
+										</div>
+									}
+									<ProjectItem.TagContainer>
 										{ project.tags.map((tag) => (
 											<ProjectItem.Tag key={ tag } color="dark" pill>{ tag }</ProjectItem.Tag>
 										)) }
-									</div>
+									</ProjectItem.TagContainer>
 									<hr />
 									<ReactMarkdown source={ project.desc } />
 								</ProjectItem.Card>
