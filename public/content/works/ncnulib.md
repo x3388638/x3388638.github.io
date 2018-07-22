@@ -2,7 +2,7 @@
   
 參與專案:
 - 圖書館首頁: Joomla
-- 山城記憶: 數位典藏系統
+- [山城記憶](http://apollo.library.ncnu.edu.tw/news_web/history/): 數位典藏系統
 - [論文資料格式轉換](https://github.com/x3388638/NCNU-LIB)
 
 使用技術:
