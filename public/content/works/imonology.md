@@ -7,7 +7,7 @@
 - 工作時數紀錄系統: 用以回報每日工作時數及內容。
 - Wordpress 架設: 形象網站、購物車建置，串接金流，整合登入 API。
 - 區塊鏈服務: 整合交易所 API、發送 Ether、產生並發送 Ethereum token。
-- 基於區塊鏈之投票系統: 建立於 Ethereum smart contract 上的投票系統。
+- 基於區塊鏈之投票系統: 建立於 Ethereum smart contract 上的投票系統，包含 Web 與 Android/iOS app (React Native)。
 
 使用技術:
 - 前端: jQuery、React、Bootstrap、WebSocket、WebRTC、web3.js、Chart.js、scalra-flexform
