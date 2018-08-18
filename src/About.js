@@ -8,6 +8,7 @@ import styled from 'styled-components';
 
 import BlockTitle from "./BlockTitle";
 import Loading from './Loading';
+import SoldierTimer from './SoldierTimer';
 
 const ReactMarkdown = require('react-markdown');
 
@@ -59,6 +60,7 @@ export default class About extends React.Component {
 							{ !this.state.content &&
 								<Loading />
 							}
+							<SoldierTimer start="2018-08-22" end="2018-12-17" />
 							<ReactMarkdown source={this.state.content} />
 						</AboutContent>
 					</Col>
