@@ -57,11 +57,13 @@ export default class About extends React.Component {
 				<Row>
 					<Col>
 						<AboutContent>
-							{ !this.state.content &&
-								<Loading />
+							{ !this.state.content ?
+								<Loading /> :
+								<React.Fragment>
+									<SoldierTimer start="2018-08-22" end="2018-12-17" />
+									<ReactMarkdown source={this.state.content} />
+								</React.Fragment>
 							}
-							<SoldierTimer start="2018-08-22" end="2018-12-17" />
-							<ReactMarkdown source={this.state.content} />
 						</AboutContent>
 					</Col>
 				</Row>
