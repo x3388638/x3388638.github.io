@@ -97,20 +97,12 @@ export default class Project extends React.PureComponent {
 	}
 
 	componentDidMount() {
-		let projects = [];
-		fetch(`${ process.env.PUBLIC_URL }/content/projects/list.json`).then(res => res.json()).then((list) => {
-			list.reduce((p, projectData) => {
-				return p.then(() => {
-					return new Promise((resolve) => {
-						fetch(`${ process.env.PUBLIC_URL }/content/projects/${ projectData.key }.md`).then(res => res.text()).then((desc) => {
-							projectData.desc = desc;
-							projects.push(projectData);
-							resolve();
-						});
-					});
-				});
-			}, Promise.resolve()).then(() => {
-				// get github stars & forks
+		fetch(`${ process.env.PUBLIC_URL }/content/projects/list.json`).then((res) => res.json()).then((list) => {
+			Promise.all(list.map((projectData) =>
+				fetch(`${ process.env.PUBLIC_URL }/content/projects/${ projectData.key }.md`)
+					.then((res) => res.text())
+					.then((desc) => Object.assign({}, projectData, { desc }))
+			)).then((projects) => {
 				this.getRepo(projects);
 				this.setState({
 					projects
