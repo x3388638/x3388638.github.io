@@ -112,26 +112,20 @@ export default class Project extends React.PureComponent {
 	}
 
 	getRepo(oriProjects = this.state.projects) {
-		const projects = [];
-		oriProjects.reduce((p, projectData) => {
-			return p.then(() => new Promise((resolve) => {
-				const match = projectData.link.match(/^http(s)?:\/\/github.com\/([a-zA-Z0-9]*)\/([a-zA-Z0-9\-_.]*)(\/)?$/);
-				if (match) {
-					const [,, owner, repo] = match;
-					fetch(`https://api.github.com/repos/${ owner }/${ repo }`).then(res => res.json()).then((repoData) => {
-						projectData.stars = repoData.stargazers_count;
-						projectData.forks = repoData.forks_count;
-						projects.push(projectData);
-						resolve();
-					});
+		Promise.all(oriProjects.map((projectData) => {
+			const match = projectData.link.match(/^http(s)?:\/\/github.com\/([a-zA-Z0-9]*)\/([a-zA-Z0-9\-_.]*)(\/)?$/);
+			if (match) {
+				const [, , owner, repo] = match;
+				return fetch(`https://api.github.com/repos/${owner}/${repo}`)
+					.then(res => res.json())
+					.then((repoData) => Object.assign({}, projectData, {
+						stars: repoData.stargazers_count,
+						forks: repoData.forks_count
+					}));
+			}
 
-					return;
-				}
-
-				projects.push(projectData);
-				resolve();
-			}));
-		}, Promise.resolve()).then(() => {
+			return Promise.resolve(projectData);
+		})).then((projects) => {
 			this.setState({
 				projects
 			});
