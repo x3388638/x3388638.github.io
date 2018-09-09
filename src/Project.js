@@ -160,7 +160,7 @@ export default class Project extends React.PureComponent {
 										}
 									</CardTitle>
 									<ProjectItem.Time>
-										<i className="fa fa-clock-o" aria-hidden="true"></i> { project.time }
+										<i className="fa fa-clock-o" aria-hidden="true"></i> { project.start } - { project.end }
 									</ProjectItem.Time>
 									{ project.stars !== undefined && (project.stars !== 0 || project.forks !== 0) &&
 										<div>
