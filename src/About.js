@@ -1,21 +1,16 @@
 import React from 'react';
 import {
-	Container,
 	Row,
 	Col
 } from 'reactstrap';
 import styled from 'styled-components';
 
+import AboutWarpper from './SectionContainer';
 import BlockTitle from "./BlockTitle";
 import Loading from './Loading';
 import SoldierTimer from './SoldierTimer';
 
 const ReactMarkdown = require('react-markdown');
-
-const AboutWarpper = styled(Container)`
-	padding-top: 20px;
-	color: var(--dark);
-`;
 
 const AboutContent = styled.div`
 	white-space: pre-line;

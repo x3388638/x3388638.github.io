@@ -1,11 +1,12 @@
 import React from 'react';
 import {
-	Container,
 	Col,
 	Row,
 	Card
 } from 'reactstrap';
 import styled from 'styled-components';
+
+import SkillWrapepr from './SectionContainer';
 import BlockTitle from './BlockTitle';
 import Loading from './Loading';
 
@@ -44,11 +45,6 @@ class CardLabel extends React.Component {
 		)
 	}
 }
-
-const SkillWrapepr = styled(Container)`
-	padding-top: 20px;
-	color: var(--dark);
-`;
 
 const SkillCOntent = styled.div`
 	margin-left: 40px;

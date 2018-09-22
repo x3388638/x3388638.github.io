@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-	Container,
 	Row,
 	Col,
 	Card,
@@ -9,15 +8,11 @@ import {
 } from 'reactstrap';
 import styled from 'styled-components';
 
+import WorkWrapper from './SectionContainer';
 import BlockTitle from './BlockTitle';
 import Loading from './Loading';
 
 const ReactMarkdown = require('react-markdown');
-
-const WorkWrapper = styled(Container)`
-	padding-top: 20px;
-	color: var(--dark);
-`;
 
 const WorkContent = styled.div`
 	margin-left: 40px;

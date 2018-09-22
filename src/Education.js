@@ -1,18 +1,13 @@
 import React from 'react';
 import {
-	Container,
 	Row,
 	Col
 } from 'reactstrap';
 import styled from 'styled-components';
 
+import EducationWrapper from './SectionContainer';
 import BlockTitle from './BlockTitle';
 import Loading from './Loading';
-
-const EducationWrapper = styled(Container)`
-	padding-top: 20px;
-	color: var(--dark);
-`;
 
 const EducationContenr = styled.div`
 	margin-left: 40px;
