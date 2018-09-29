@@ -55,7 +55,7 @@ export default class About extends React.Component {
 							{ !this.state.content ?
 								<Loading /> :
 								<React.Fragment>
-									<SoldierTimer start="2018-08-22" end="2018-12-17" />
+									<SoldierTimer start="2018-08-22" end="2018-12-07" />
 									<ReactMarkdown source={this.state.content} />
 								</React.Fragment>
 							}
