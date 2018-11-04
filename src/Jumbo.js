@@ -114,7 +114,7 @@ export default class Jumbo extends React.Component {
 					</div>
 				</JumboContainer>
 				{ this.state.calendar &&
-					<JumboContainer md={ 12 }>
+					<JumboContainer className="github-calendar-graph" md={ 12 }>
 						<CalendarContainer dangerouslySetInnerHTML={{ __html: this.state.calendar }} />
 						<CalendarText>GitHub Contribution</CalendarText>
 					</JumboContainer>
