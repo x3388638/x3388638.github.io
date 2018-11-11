@@ -56,7 +56,7 @@ export default class About extends React.Component {
 								<Loading /> :
 								<React.Fragment>
 									<SoldierTimer start="2018-08-22" end="2018-12-07" />
-									<ReactMarkdown source={this.state.content} />
+									<ReactMarkdown className="About__content" source={this.state.content} />
 								</React.Fragment>
 							}
 						</AboutContent>
