@@ -8,7 +8,8 @@ import styled from 'styled-components';
 import SETTINGS from './settings';
 
 const JumboWrapper = styled(Row)`
-	background: var(--dark);
+	background: url(${ process.env.PUBLIC_URL }/bg.jpg) no-repeat center fixed;
+	background-size: cover;
 	padding-top: 120px;
 	padding-bottom: 30px;
 `;
@@ -28,6 +29,7 @@ const JumboName = styled.div`
 	margin-bottom: 30px;
 	color: var(--light);
 	font-size:30px;
+	text-shadow: 0 0 20px #000;
 `;
 
 const JumboSocialLink = styled.a`
@@ -41,6 +43,7 @@ const JumboSocialLink = styled.a`
 		margin-left: 10px;
 		margin-right: 10px;
 		text-decoration: none;
+		text-shadow: 0 0 1px #000;
 	}
 `;
 
