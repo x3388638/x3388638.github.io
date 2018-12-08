@@ -12,6 +12,9 @@ const JumboWrapper = styled(Row)`
 	background-size: cover;
 	padding-top: 120px;
 	padding-bottom: 30px;
+	@media screen and (max-device-width: 1024px) {
+		background-attachment: scroll;
+	}
 `;
 
 const JumboContainer = styled(Col)`
