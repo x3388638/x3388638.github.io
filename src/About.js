@@ -1,64 +1,64 @@
-import React from 'react';
+import React from 'react'
 import {
-	Row,
-	Col
-} from 'reactstrap';
-import styled from 'styled-components';
+  Row,
+  Col
+} from 'reactstrap'
+import styled from 'styled-components'
 
-import AboutWarpper from './SectionContainer';
-import BlockTitle from "./BlockTitle";
-import Loading from './Loading';
+import AboutWarpper from './SectionContainer'
+import BlockTitle from './BlockTitle'
+import Loading from './Loading'
 
-const ReactMarkdown = require('react-markdown');
+const ReactMarkdown = require('react-markdown')
 
 const AboutContent = styled.div`
-	white-space: pre-line;
-	margin-left: 40px;
-	@media (max-width: 576px) {
-		margin-left: 0;
-	}
-`;
+  white-space: pre-line;
+  margin-left: 40px;
+  @media (max-width: 576px) {
+    margin-left: 0;
+  }
+`
 
 export default class About extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			content: ''
-		};
-	}
+  constructor (props) {
+    super(props)
+    this.state = {
+      content: ''
+    }
+  }
 
-	componentDidMount() {
-		fetch(`${ process.env.PUBLIC_URL }/content/about.md`).then((res) => {
-			return res.text();
-		}).then((content) => {
-			this.setState({
-				content
-			});
-		});
-	}
+  componentDidMount () {
+    fetch(`${process.env.PUBLIC_URL}/content/about.md`).then((res) => {
+      return res.text()
+    }).then((content) => {
+      this.setState({
+        content
+      })
+    })
+  }
 
-	render() {
-		return (
-			<AboutWarpper>
-				<Row>
-					<Col md={ 12 }>
-						<BlockTitle
-							icon="info"
-							title="關於我"
-						/>
-					</Col>
-				</Row>
-				<Row>
-					<Col>
-						<AboutContent>
-							{ !this.state.content ?
-								<Loading /> :
-								<ReactMarkdown className="About__content" source={this.state.content} />
-							}
-						</AboutContent>
-					</Col>
-				</Row>
-			</AboutWarpper>
-		)
-	}
+  render () {
+    return (
+      <AboutWarpper>
+        <Row>
+          <Col md={12}>
+            <BlockTitle
+              icon='info'
+              title='關於我'
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <AboutContent>
+              { !this.state.content
+                ? <Loading />
+                : <ReactMarkdown className='About__content' source={this.state.content} />
+              }
+            </AboutContent>
+          </Col>
+        </Row>
+      </AboutWarpper>
+    )
+  }
 }
