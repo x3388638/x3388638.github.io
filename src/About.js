@@ -8,7 +8,6 @@ import styled from 'styled-components';
 import AboutWarpper from './SectionContainer';
 import BlockTitle from "./BlockTitle";
 import Loading from './Loading';
-import SoldierTimer from './SoldierTimer';
 
 const ReactMarkdown = require('react-markdown');
 
