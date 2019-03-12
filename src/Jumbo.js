@@ -1,23 +1,34 @@
 import React from 'react'
-import {
-  Row,
-  Col
-} from 'reactstrap'
-import styled from 'styled-components'
+import { Row } from 'reactstrap'
+import styled, { keyframes } from 'styled-components'
 
 import SETTINGS from './settings'
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`
+
 const JumboWrapper = styled(Row)`
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   background: url(${process.env.PUBLIC_URL}/bg.jpg) no-repeat center fixed;
   background-size: cover;
-  padding-top: 120px;
-  padding-bottom: 30px;
   @media screen and (max-device-width: 1024px) {
     background-attachment: scroll;
   }
 `
 
-const JumboContainer = styled(Col)`
+const JumboContainer = styled.div`
+  flex: 1;
+  padding-top: 50px;
+  padding-bottom: 200px;
   text-align: center;
 `
 
@@ -33,6 +44,11 @@ const JumboName = styled.div`
   color: var(--light);
   font-size:30px;
   text-shadow: 0 0 20px #000;
+  animation: ${fadeIn} .5s linear;
+`
+
+const JumboSocialLinkWrapper = styled.div`
+  animation: ${fadeIn} .5s linear;
 `
 
 const JumboSocialLink = styled.a`
@@ -50,20 +66,20 @@ const JumboSocialLink = styled.a`
   }
 `
 
-const CalendarContainer = styled.div`
-  margin-top: 20px;
-  @media (max-width: 750px) {
-    display: none;
-  }
-`
+// const CalendarContainer = styled.div`
+//   margin-top: 20px;
+//   @media (max-width: 750px) {
+//     display: none;
+//   }
+// `
 
-const CalendarText = styled.div`
-  color: #696969;
-  font-size: 12px;
-  @media (max-width: 750px) {
-    display: none;
-  }
-`
+// const CalendarText = styled.div`
+//   color: #696969;
+//   font-size: 12px;
+//   @media (max-width: 750px) {
+//     display: none;
+//   }
+// `
 
 export default class Jumbo extends React.Component {
   constructor (props) {
@@ -97,34 +113,35 @@ export default class Jumbo extends React.Component {
             <JumboProfileImg src={`${process.env.PUBLIC_URL}/profile.jpg`} alt='profile' />
           </div>
           { SETTINGS.name &&
-          <JumboName>
-            <span>{ SETTINGS.name }</span>
-          </JumboName>
+            <JumboName>
+              <span>{ SETTINGS.name }</span>
+            </JumboName>
           }
-          <div>
+          <JumboSocialLinkWrapper>
             { SETTINGS.githubAccount &&
-            <JumboSocialLink href={`https://github.com/${SETTINGS.githubAccount}`} rel='noopener noreferrer' target='_blank'>
-              <i className='fa fa-github-square' /> GitHub
-            </JumboSocialLink>
+              <JumboSocialLink href={`https://github.com/${SETTINGS.githubAccount}`} rel='noopener noreferrer' target='_blank'>
+                <i className='fa fa-github-square' /> GitHub
+              </JumboSocialLink>
             }
             { SETTINGS.linkedinURL &&
-            <JumboSocialLink href={SETTINGS.linkedinURL} rel='noopener noreferrer' target='_blank'>
-              <i className='fa fa-linkedin-square' /> LinkedIn
-            </JumboSocialLink>
+              <JumboSocialLink href={SETTINGS.linkedinURL} rel='noopener noreferrer' target='_blank'>
+                <i className='fa fa-linkedin-square' /> LinkedIn
+              </JumboSocialLink>
             }
             { SETTINGS.email &&
-            <JumboSocialLink href={`mailto:${SETTINGS.email}`}>
-              <i className='fa fa-envelope-open' /> Email
-            </JumboSocialLink>
+              <JumboSocialLink href={`mailto:${SETTINGS.email}`}>
+                <i className='fa fa-envelope-open' /> Email
+              </JumboSocialLink>
             }
-          </div>
+          </JumboSocialLinkWrapper>
         </JumboContainer>
-        { this.state.calendar &&
-        <JumboContainer className='github-calendar-graph' md={12}>
-          <CalendarContainer dangerouslySetInnerHTML={{ __html: this.state.calendar }} />
-          <CalendarText>GitHub Contribution</CalendarText>
-        </JumboContainer>
-        }
+
+        {/* this.state.calendar &&
+          <JumboContainer className='github-calendar-graph' md={12}>
+            <CalendarContainer dangerouslySetInnerHTML={{ __html: this.state.calendar }} />
+            <CalendarText>GitHub Contribution</CalendarText>
+          </JumboContainer>
+        */}
       </JumboWrapper>
     )
   }
