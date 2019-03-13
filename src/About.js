@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {
   Row,
   Col
@@ -19,7 +20,7 @@ const AboutContent = styled.div`
   }
 `
 
-export default class About extends React.Component {
+class About extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -39,7 +40,7 @@ export default class About extends React.Component {
 
   render () {
     return (
-      <AboutWarpper>
+      <AboutWarpper active={this.props.active}>
         <Row>
           <Col md={12}>
             <BlockTitle
@@ -62,3 +63,9 @@ export default class About extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  active: state.section.name === 'About'
+})
+
+export default connect(mapStateToProps)(About)

@@ -7,7 +7,7 @@ import store from './store'
 
 export default () => (
   <Provider store={store}>
-    <Container fluid>
+    <Container fluid style={{ position: 'relative' }}>
       <Jumbo />
       <About />
     </Container>
