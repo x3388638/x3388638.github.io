@@ -2,7 +2,7 @@ import { handleActions } from 'redux-actions'
 import { changeTo } from '../actions/section'
 
 const initialState = {
-  name: 'index'
+  name: 'Jumbo'
 }
 
 const reducerMap = {

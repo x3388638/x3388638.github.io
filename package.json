@@ -12,6 +12,7 @@
     "react-redux": "^6.0.1",
     "react-scripts": "1.1.4",
     "react-spinners": "^0.3.2",
+    "react-swipeable": "^5.0.1",
     "reactstrap": "^6.1.0",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.5",
