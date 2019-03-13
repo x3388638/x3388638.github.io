@@ -14,6 +14,21 @@ const fadeIn = keyframes`
   }
 `
 
+const upDown = keyframes`
+  0% {
+    bottom: 20px;
+    font-size: 45px;
+  }
+  50% {
+    bottom: 10px;
+    font-size: 40px;
+  }
+  100% {
+    bottom: 20px;
+    font-size: 45px;
+  }
+`
+
 const JumboWrapper = styled(Row)`
   min-height: 100vh;
   display: flex;
@@ -66,6 +81,18 @@ const JumboSocialLink = styled.a`
   }
 `
 
+const AngleDownButton = styled.div`
+  color: rgba(243, 243, 243, 0.5);
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  font-size: 40px;
+  animation: ${upDown} .8s linear infinite;
+  & i {
+    cursor: pointer;
+  }
+`
+
 export default () => (
   <JumboWrapper>
     <JumboContainer md={12}>
@@ -94,6 +121,9 @@ export default () => (
           </JumboSocialLink>
         }
       </JumboSocialLinkWrapper>
+      <AngleDownButton>
+        <i className='fa fa-angle-double-down' aria-hidden='true' />
+      </AngleDownButton>
     </JumboContainer>
   </JumboWrapper>
 )
