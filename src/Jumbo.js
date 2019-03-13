@@ -66,83 +66,34 @@ const JumboSocialLink = styled.a`
   }
 `
 
-// const CalendarContainer = styled.div`
-//   margin-top: 20px;
-//   @media (max-width: 750px) {
-//     display: none;
-//   }
-// `
-
-// const CalendarText = styled.div`
-//   color: #696969;
-//   font-size: 12px;
-//   @media (max-width: 750px) {
-//     display: none;
-//   }
-// `
-
-export default class Jumbo extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      calendar: null
-    }
-
-    this.getCalendar = this.getCalendar.bind(this)
-  }
-
-  componentDidMount () {
-    this.getCalendar()
-  }
-
-  getCalendar () {
-    fetch(`https://moli.rocks:774/graph/${SETTINGS.githubAccount}`)
-      .then((res) => res.text())
-      .then((calendar) => {
-        this.setState({
-          calendar
-        })
-      })
-  }
-
-  render () {
-    return (
-      <JumboWrapper>
-        <JumboContainer md={12}>
-          <div>
-            <JumboProfileImg src={`${process.env.PUBLIC_URL}/profile.jpg`} alt='profile' />
-          </div>
-          { SETTINGS.name &&
-            <JumboName>
-              <span>{ SETTINGS.name }</span>
-            </JumboName>
-          }
-          <JumboSocialLinkWrapper>
-            { SETTINGS.githubAccount &&
-              <JumboSocialLink href={`https://github.com/${SETTINGS.githubAccount}`} rel='noopener noreferrer' target='_blank'>
-                <i className='fa fa-github-square' /> GitHub
-              </JumboSocialLink>
-            }
-            { SETTINGS.linkedinURL &&
-              <JumboSocialLink href={SETTINGS.linkedinURL} rel='noopener noreferrer' target='_blank'>
-                <i className='fa fa-linkedin-square' /> LinkedIn
-              </JumboSocialLink>
-            }
-            { SETTINGS.email &&
-              <JumboSocialLink href={`mailto:${SETTINGS.email}`}>
-                <i className='fa fa-envelope-open' /> Email
-              </JumboSocialLink>
-            }
-          </JumboSocialLinkWrapper>
-        </JumboContainer>
-
-        {/* this.state.calendar &&
-          <JumboContainer className='github-calendar-graph' md={12}>
-            <CalendarContainer dangerouslySetInnerHTML={{ __html: this.state.calendar }} />
-            <CalendarText>GitHub Contribution</CalendarText>
-          </JumboContainer>
-        */}
-      </JumboWrapper>
-    )
-  }
-}
+export default () => (
+  <JumboWrapper>
+    <JumboContainer md={12}>
+      <div>
+        <JumboProfileImg src={`${process.env.PUBLIC_URL}/profile.jpg`} alt='profile' />
+      </div>
+      { SETTINGS.name &&
+        <JumboName>
+          <span>{ SETTINGS.name }</span>
+        </JumboName>
+      }
+      <JumboSocialLinkWrapper>
+        { SETTINGS.githubAccount &&
+          <JumboSocialLink href={`https://github.com/${SETTINGS.githubAccount}`} rel='noopener noreferrer' target='_blank'>
+            <i className='fa fa-github-square' /> GitHub
+          </JumboSocialLink>
+        }
+        { SETTINGS.linkedinURL &&
+          <JumboSocialLink href={SETTINGS.linkedinURL} rel='noopener noreferrer' target='_blank'>
+            <i className='fa fa-linkedin-square' /> LinkedIn
+          </JumboSocialLink>
+        }
+        { SETTINGS.email &&
+          <JumboSocialLink href={`mailto:${SETTINGS.email}`}>
+            <i className='fa fa-envelope-open' /> Email
+          </JumboSocialLink>
+        }
+      </JumboSocialLinkWrapper>
+    </JumboContainer>
+  </JumboWrapper>
+)
