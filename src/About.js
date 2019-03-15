@@ -12,6 +12,15 @@ import Loading from './Loading'
 
 const ReactMarkdown = require('react-markdown')
 
+const FadeInWrapper = styled(Row)`
+  opacity: 0;
+  transition: opacity 1s;
+  transition-delay: ${({ delay }) => delay + 's'};
+  &.active {
+    opacity: 1;
+  }
+`
+
 const AboutContent = styled.div`
   white-space: pre-line;
   margin-left: 40px;
@@ -41,15 +50,15 @@ class About extends React.Component {
   render () {
     return (
       <AboutWarpper active={this.props.active} zindex={95}>
-        <Row>
+        <FadeInWrapper className={this.props.active ? 'active' : ''} delay={0.5}>
           <Col md={12}>
             <BlockTitle
               icon='info'
               title='關於我'
             />
           </Col>
-        </Row>
-        <Row>
+        </FadeInWrapper>
+        <FadeInWrapper className={this.props.active ? 'active' : ''} delay={1}>
           <Col>
             <AboutContent>
               { !this.state.content
@@ -58,7 +67,7 @@ class About extends React.Component {
               }
             </AboutContent>
           </Col>
-        </Row>
+        </FadeInWrapper>
       </AboutWarpper>
     )
   }

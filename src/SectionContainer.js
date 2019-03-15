@@ -15,7 +15,10 @@ const Wrapper = styled.div`
 `
 
 const Main = styled(Container)`
-  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
   color: var(--dark);
 `
 
