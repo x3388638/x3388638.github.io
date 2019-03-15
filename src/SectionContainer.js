@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   left: 0;
   top: -100vh;
   transition: top .5s;
+  padding-top: 50px;
   z-index: ${({ zindex }) => zindex};
   &.active {
     top: 0;
@@ -18,7 +19,8 @@ const Main = styled(Container)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
+  padding-bottom: 200px;
   color: var(--dark);
 `
 
