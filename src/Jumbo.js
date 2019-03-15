@@ -5,6 +5,8 @@ import styled, { keyframes } from 'styled-components'
 import { useSwipeable } from 'react-swipeable'
 import { changeTo } from './actions/section'
 
+import AngleDownButton from './AngleDownButton'
+
 import SETTINGS from './settings'
 
 const fadeIn = keyframes`
@@ -14,21 +16,6 @@ const fadeIn = keyframes`
 
   to {
     opacity: 1;
-  }
-`
-
-const upDown = keyframes`
-  0% {
-    bottom: 20px;
-    font-size: 45px;
-  }
-  50% {
-    bottom: 10px;
-    font-size: 40px;
-  }
-  100% {
-    bottom: 20px;
-    font-size: 45px;
   }
 `
 
@@ -92,18 +79,6 @@ const JumboSocialLink = styled.a`
   }
 `
 
-const AngleDownButton = styled.div`
-  color: rgba(243, 243, 243, 0.5);
-  position: absolute;
-  width: 100%;
-  bottom: 10px;
-  font-size: 40px;
-  animation: ${upDown} .8s linear infinite;
-  & i {
-    cursor: pointer;
-  }
-`
-
 const Jumbo = ({ active, dispatch }) => {
   const swipeHandler = useSwipeable({
     onSwipedUp: slideUp
@@ -141,9 +116,7 @@ const Jumbo = ({ active, dispatch }) => {
             </JumboSocialLink>
           }
         </JumboSocialLinkWrapper>
-        <AngleDownButton>
-          <i className='fa fa-angle-double-down' aria-hidden='true' onClick={slideUp} />
-        </AngleDownButton>
+        <AngleDownButton handleClick={slideUp} />
       </JumboContainer>
     </JumboWrapper>
   )
