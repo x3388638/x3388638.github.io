@@ -17,6 +17,7 @@ const Wrapper = styled.div`
 
 const Main = styled(Container)`
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 50px);

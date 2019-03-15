@@ -9,6 +9,7 @@ import styled from 'styled-components'
 import AboutWarpper from './SectionContainer'
 import BlockTitle from './BlockTitle'
 import Loading from './Loading'
+import AngleDownButton from './AngleDownButton'
 
 const ReactMarkdown = require('react-markdown')
 
@@ -68,6 +69,7 @@ class About extends React.Component {
             </AboutContent>
           </Col>
         </FadeInWrapper>
+        <AngleDownButton handleClick={() => { console.log('a') }} color='#dadada' />
       </AboutWarpper>
     )
   }

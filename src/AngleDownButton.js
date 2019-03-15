@@ -17,19 +17,21 @@ const upDown = keyframes`
 `
 
 const AngleDownButton = styled.div`
-  color: rgba(243, 243, 243, 0.5);
+  color: ${({ color }) => color || 'rgba(243, 243, 243, 0.5)'};
   position: absolute;
   width: 100%;
+  left: 0;
   bottom: 10px;
   font-size: 40px;
+  text-align: center;
   animation: ${upDown} .8s linear infinite;
   & i {
     cursor: pointer;
   }
 `
 
-export default ({ handleClick }) => (
-  <AngleDownButton>
+export default ({ handleClick, color }) => (
+  <AngleDownButton color={color}>
     <i className='fa fa-angle-double-down' aria-hidden='true' onClick={handleClick} />
   </AngleDownButton>
 )
