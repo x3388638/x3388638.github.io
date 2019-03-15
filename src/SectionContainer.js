@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   left: 0;
   top: -100vh;
   transition: top .5s;
-  z-index: 95;
+  z-index: ${({ zindex }) => zindex};
   &.active {
     top: 0;
   }
@@ -19,8 +19,8 @@ const Main = styled(Container)`
   color: var(--dark);
 `
 
-export default ({ active, children }) => (
-  <Wrapper className={active ? 'active' : ''}>
+export default ({ active, zindex, children }) => (
+  <Wrapper className={active ? 'active' : ''} zindex={zindex}>
     <Main>
       { children }
     </Main>

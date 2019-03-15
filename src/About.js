@@ -40,7 +40,7 @@ class About extends React.Component {
 
   render () {
     return (
-      <AboutWarpper active={this.props.active}>
+      <AboutWarpper active={this.props.active} zindex={95}>
         <Row>
           <Col md={12}>
             <BlockTitle
