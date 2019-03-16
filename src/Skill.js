@@ -5,6 +5,7 @@ import {
   Card
 } from 'reactstrap'
 import styled from 'styled-components'
+import { connect } from 'react-redux'
 
 import SkillWrapepr from './SectionContainer'
 import BlockTitle from './BlockTitle'
@@ -73,7 +74,7 @@ const SkillText = styled.a`
   }
 `
 
-export default class Skill extends React.Component {
+class Skill extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -91,7 +92,7 @@ export default class Skill extends React.Component {
 
   render () {
     return (
-      <SkillWrapepr>
+      <SkillWrapepr active={this.props.active} zindex={90}>
         <Row>
           <Col md={12}>
             <BlockTitle
@@ -145,3 +146,9 @@ export default class Skill extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  active: state.section.name === 'Skill'
+})
+
+export default connect(mapStateToProps)(Skill)

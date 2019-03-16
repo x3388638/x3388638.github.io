@@ -11,6 +11,8 @@ import BlockTitle from './BlockTitle'
 import Loading from './Loading'
 import AngleDownButton from './AngleDownButton'
 
+import { changeTo } from './actions/section'
+
 const ReactMarkdown = require('react-markdown')
 
 const FadeInWrapper = styled(Row)`
@@ -69,7 +71,7 @@ class About extends React.Component {
             </AboutContent>
           </Col>
         </FadeInWrapper>
-        <AngleDownButton handleClick={() => { console.log('a') }} color='#dadada' />
+        <AngleDownButton handleClick={() => { this.props.dispatch(changeTo('Skill')) }} color='#dadada' />
       </AboutWarpper>
     )
   }
