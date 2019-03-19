@@ -33,6 +33,7 @@
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
     "gh-pages": "^1.2.0",
+    "husky": "^1.3.1",
     "jest": "^23.6.0",
     "react-test-renderer": "^16.6.0",
     "standard": "^12.0.1"
@@ -44,5 +45,10 @@
     "global": [
       "fetch"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
