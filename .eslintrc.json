@@ -17,7 +17,9 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {},
+  "rules": {
+    "react/jsx-no-target-blank": "warn"
+  },
   "settings": {
     "react": {
       "version": "detect"

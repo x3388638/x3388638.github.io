@@ -7,7 +7,8 @@ import Profile from './Profile'
 
 const Container = styled.div`
   display: inline-block;
-  background: url(${bg});
+  background: #333;
+  background-image: url(${bg});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
