@@ -2,7 +2,7 @@ import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import styled from 'styled-components'
 import CssReset from '../components/CssReset'
-import bg from '../../assets/bg.jpg'
+import bg from '../../static/bg.jpg'
 import Profile from './Profile'
 
 const Container = styled.div`
@@ -12,7 +12,8 @@ const Container = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100%;
+  position: absolute;
   width: 100vw;
 `
 

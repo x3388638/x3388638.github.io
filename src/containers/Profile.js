@@ -6,10 +6,10 @@ import {
   faGithubSquare,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
-import profileImg from '../../assets/profile_sm.jpg'
+import profileImg from '../../static/profile_sm.jpg'
 
 const Container = styled.div`
-  margin: 25vh auto 0;
+  margin: 20vh auto 0;
   width: max-content;
   text-align: center;
   color: #f3f3f3;
@@ -41,7 +41,7 @@ const Name = styled.div`
   align-items: baseline;
   padding: 30px 0 20px;
   font-size: 26px;
-  font-weight: bold;
+  font-weight: 500;
   text-shadow: #666 0px 0px 2px;
   opacity: 0;
   animation: ${fadeIn} cubic-bezier(0, 0, 0.2, 1) 1.5s forwards;

@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -37,8 +38,14 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'index.html'),
-      favicon: path.resolve(__dirname, 'assets/favicon.ico')
-    })
+      favicon: path.resolve(__dirname, 'static/favicon.ico')
+    }),
+    new CopyPlugin([
+      {
+        from: path.resolve(__dirname, 'public/*'),
+        flatten: true
+      }
+    ])
   ],
   devServer: {
     contentBase: __dirname,

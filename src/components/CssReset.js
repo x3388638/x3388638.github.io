@@ -110,6 +110,7 @@ const reset = css`
 
   body {
     line-height: 1;
+    font-family: sans-serif;
   }
 
   ol,
