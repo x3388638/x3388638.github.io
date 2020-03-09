@@ -10,8 +10,8 @@ import profileImg from '../../static/profile_sm.jpg'
 import bg from '../../static/bg.jpg'
 
 const backdropOpacity = keyframes`
-  from { opacity: 0); }
-  to { opacity: 0.3; }
+  from { opacity: 0; }
+  to { opacity: 0.15; }
 `
 
 const fadeIn = keyframes`
@@ -78,7 +78,7 @@ const Title = styled.span`
   font-weight: 200;
   display: inline-block;
   width: 0;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   margin: -10px 0 -10px 0;
   overflow: hidden;
   white-space: nowrap;
