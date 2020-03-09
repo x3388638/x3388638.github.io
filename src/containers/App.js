@@ -2,28 +2,19 @@ import React from 'react'
 import { hot } from 'react-hot-loader/root'
 import styled from 'styled-components'
 import CssReset from '../components/CssReset'
-import bg from '../../static/bg.jpg'
-import Profile from './Profile'
+import AppCss from '../components/AppCss'
+import Cover from './Cover'
 
 const Container = styled.div`
-  display: inline-block;
-  background: #333;
-  background-image: url(${bg});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100%;
-  position: absolute;
-  width: 100vw;
+  height: 100%;
 `
 
-const App = () => {
-  return (
-    <Container>
-      <CssReset />
-      <Profile />
-    </Container>
-  )
-}
+const App = () => (
+  <Container>
+    <CssReset />
+    <AppCss />
+    <Cover />
+  </Container>
+)
 
 export default hot(App)
