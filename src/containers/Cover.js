@@ -6,6 +6,7 @@ import {
   faGithubSquare,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
+import Tabs from './Tabs'
 import profileImg from '../../static/profile_sm.jpg'
 import bg from '../../static/bg.jpg'
 
@@ -105,6 +106,20 @@ const Social = styled.div`
   }
 `
 
+const TabsContainer = styled.section`
+  margin: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  opacity: 0;
+  animation: ${fadeIn} cubic-bezier(0, 0, 0.2, 1) 1.5s forwards;
+  animation-delay: 2.6s;
+
+  @media screen and (max-width: 767px) {
+    margin: 50px 0;
+    border-radius: 0;
+  }
+`
+
 const Cover = () => (
   <Container>
     <Backdrop />
@@ -128,6 +143,9 @@ const Cover = () => (
         <FontAwesomeIcon icon={faMedium} /> <span>Medium</span>
       </a>
     </Social>
+    <TabsContainer>
+      <Tabs />
+    </TabsContainer>
   </Container>
 )
 
