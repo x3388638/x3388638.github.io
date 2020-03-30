@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -60,21 +60,31 @@ const Tabs = () => {
     }, 450)
   }, [])
 
-  const handleToggleTab = useCallback(() => {
-    setActiveTab(activeTab => {
-      const nextTab = activeTab === EXPERIENCE ? PORTFOLIO : EXPERIENCE
-      startContentAnimation(nextTab)
-      return nextTab
-    })
+  useEffect(() => {
+    startContentAnimation(activeTab)
+  }, [activeTab])
+
+  const handleTabClick = useCallback(nextTab => {
+    setActiveTab(nextTab)
   }, [])
 
   return (
     <Container>
       <Head>
-        <Tab onClick={handleToggleTab} active={activeTab === EXPERIENCE}>
+        <Tab
+          onClick={() => {
+            handleTabClick(EXPERIENCE)
+          }}
+          active={activeTab === EXPERIENCE}
+        >
           EXPERIENCE
         </Tab>
-        <Tab onClick={handleToggleTab} active={activeTab === PORTFOLIO}>
+        <Tab
+          onClick={() => {
+            handleTabClick(PORTFOLIO)
+          }}
+          active={activeTab === PORTFOLIO}
+        >
           PORTFOLIO
         </Tab>
       </Head>
