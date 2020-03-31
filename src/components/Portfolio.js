@@ -1,51 +1,53 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Carousel from 'react-grid-carousel'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar, faCodeBranch } from '@fortawesome/free-solid-svg-icons'
 
 const GITHUB_API = 'https://api.github.com'
 const PROJECTS = [
   {
     name: 'react-grid-carousel',
-    stars: null,
-    forks: null,
     repo: 'x3388638/react-grid-carousel',
     link: 'https://react-grid-carousel.now.sh/'
   },
   {
-    name: 'react-grid-carousel',
-    stars: null,
-    forks: null,
-    link: 'https://react-grid-carousel.now.sh/'
+    name: 'KeBiau',
+    repo: 'x3388638/KeBiau',
+    link: 'https://2yc.tw/KeBiau/#/'
   },
   {
-    name: 'react-grid-carousel',
-    stars: null,
-    forks: null,
-    link: 'https://react-grid-carousel.now.sh/'
+    name: 'dcard-images',
+    repo: 'x3388638/dcard-images',
+    link: 'https://github.com/x3388638/dcard-images'
   },
   {
-    name: 'react-grid-carousel',
-    stars: null,
-    forks: null,
-    link: 'https://react-grid-carousel.now.sh/'
+    name: 'github-calendar-graph',
+    repo: 'x3388638/github-calendar-graph',
+    link: 'https://github.com/x3388638/github-calendar-graph'
   },
   {
-    name: 'react-grid-carousel',
-    stars: null,
-    forks: null,
-    link: 'https://react-grid-carousel.now.sh/'
+    name: 'YahooAnswersSpamReport',
+    repo: 'x3388638/YahooAnswersSpamReport',
+    link: 'https://github.com/x3388638/YahooAnswersSpamReport'
   },
   {
-    name: 'react-grid-carousel',
-    stars: null,
-    forks: null,
-    link: 'https://react-grid-carousel.now.sh/'
+    name: 'LANChat',
+    repo: 'x3388638/LANChat',
+    link: 'https://github.com/x3388638/LANChat'
   },
   {
-    name: 'react-grid-carousel',
-    stars: null,
-    forks: null,
-    link: 'https://react-grid-carousel.now.sh/'
+    name: 'PokemonMap-for-GoPatrol',
+    repo: 'x3388638/PokemonMap-for-GoPatrol',
+    link: 'https://github.com/x3388638/PokemonMap-for-GoPatrol'
+  },
+  {
+    name: 'PKGET userscript w/ Telegram notification',
+    link: 'https://hackmd.io/s/SJOrobrA'
+  },
+  {
+    name: 'RO xmas event userscript',
+    link: 'https://hackmd.io/s/B1pB-7j-z'
   }
 ]
 
@@ -59,14 +61,17 @@ const Container = styled.div`
   }
 `
 
-const ProjectCard = styled.div`
+const ProjectCard = styled.a`
+  display: block;
   position: relative;
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
   margin: 5px;
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: rgba(7, 7, 7, 0.5) 0px 5px 5px 0px;
+  @media screen and (min-width: 768px) {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: rgba(7, 7, 7, 0.5) 0px 5px 5px 0px;
+    }
   }
 `
 
@@ -85,10 +90,11 @@ const CardBackdrop = styled.div`
 const CardContent = styled.div`
   position: absolute;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-shadow: 0 0 5px #000;
   font-size: 20px;
+  word-break: break-word;
   cursor: pointer;
   top: 0;
   left: 0;
@@ -98,12 +104,25 @@ const CardContent = styled.div`
   color: #f3f3f3;
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
 
+  span {
+    filter: drop-shadow(0px 2px 5px black);
+  }
+
   &:hover {
     background: rgba(0, 0, 0, 0.1);
   }
 
   @media screen and (max-width: 767px) {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.1);
+  }
+`
+
+const CardReacttion = styled.div`
+  margin-top: 15px;
+  font-size: 14px;
+
+  span {
+    margin: 0 5px;
   }
 `
 
@@ -117,7 +136,11 @@ const Portfolio = () => {
           return project
         }
 
-        return fetch(`${GITHUB_API}/repos/${project.repo}`)
+        return fetch(`${GITHUB_API}/repos/${project.repo}`, {
+          headers: {
+            Authorization: 'token 0e0c8b38fefbe2cd790480491e297ec8892bf2d4'
+          }
+        })
           .then(res => res.json())
           .then(data => {
             return {
@@ -148,9 +171,21 @@ const Portfolio = () => {
       >
         {projects.map((project, i) => (
           <Carousel.Item key={i}>
-            <ProjectCard>
+            <ProjectCard href={project.link} target="_blank">
               <CardBackdrop img={RANDOM_IMAGES[i]} />
-              <CardContent>{project.name}</CardContent>
+              <CardContent>
+                <span>{project.name}</span>
+                {project.repo && (
+                  <CardReacttion>
+                    <span>
+                      <FontAwesomeIcon icon={faStar} /> {project.stars}
+                    </span>
+                    <span>
+                      <FontAwesomeIcon icon={faCodeBranch} /> {project.forks}
+                    </span>
+                  </CardReacttion>
+                )}
+              </CardContent>
             </ProjectCard>
           </Carousel.Item>
         ))}
