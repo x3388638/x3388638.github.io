@@ -8,7 +8,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import Tabs from './Tabs'
 import profileImg from '../../static/profile_sm.jpg'
-import bg from '../../static/bg.jpg'
 
 const backdropOpacity = keyframes`
   from { opacity: 0; }
@@ -26,11 +25,6 @@ const scaleWidth = keyframes`
 `
 
 const Container = styled.section`
-  background: #333;
-  background-image: url(${bg});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 100%;
   padding-top: 20vh;
   box-sizing: border-box;
@@ -40,6 +34,7 @@ const Container = styled.section`
 
 const Backdrop = styled.div`
   position: absolute;
+  pointer-events: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -107,17 +102,12 @@ const Social = styled.div`
 `
 
 const TabsContainer = styled.section`
-  margin: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
   opacity: 0;
   animation: ${fadeIn} cubic-bezier(0, 0, 0.2, 1) 1.5s forwards;
   animation-delay: 2.6s;
-
-  @media screen and (max-width: 767px) {
-    margin: 50px 0;
-    border-radius: 0;
-  }
 `
 
 const Cover = () => (

@@ -1,8 +1,20 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import styled from 'styled-components'
+import Experience from '../components/Experience'
+import Portfolio from '../components/Portfolio'
 
 const Container = styled.div`
-  padding: 10px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px 10px 30px;
+  margin: 0 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+
+  @media screen and (max-width: 767px) {
+    margin: 0;
+    border-radius: 0;
+  }
 `
 
 const Head = styled.div`
@@ -89,11 +101,11 @@ const Tabs = () => {
         </Tab>
       </Head>
       <Body fadeOut={isContentFadeOut}>
-        <Content active={activeContent === EXPERIENCE}>123</Content>
+        <Content active={activeContent === EXPERIENCE}>
+          <Experience />
+        </Content>
         <Content active={activeContent === PORTFOLIO}>
-          456
-          <br />
-          678890
+          <Portfolio />
         </Content>
       </Body>
     </Container>
