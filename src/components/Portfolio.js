@@ -3,55 +3,10 @@ import styled from 'styled-components'
 import Carousel from 'react-grid-carousel'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCodeBranch } from '@fortawesome/free-solid-svg-icons'
+import projectList from '../../static/projects.json'
 
 const GITHUB_API = 'https://api.github.com'
-const PROJECTS = [
-  {
-    name: 'react-grid-carousel',
-    repo: 'x3388638/react-grid-carousel',
-    link: 'https://react-grid-carousel.now.sh/'
-  },
-  {
-    name: 'KeBiau',
-    repo: 'x3388638/KeBiau',
-    link: 'https://2yc.tw/KeBiau/#/'
-  },
-  {
-    name: 'dcard-images',
-    repo: 'x3388638/dcard-images',
-    link: 'https://github.com/x3388638/dcard-images'
-  },
-  {
-    name: 'github-calendar-graph',
-    repo: 'x3388638/github-calendar-graph',
-    link: 'https://github.com/x3388638/github-calendar-graph'
-  },
-  {
-    name: 'YahooAnswersSpamReport',
-    repo: 'x3388638/YahooAnswersSpamReport',
-    link: 'https://github.com/x3388638/YahooAnswersSpamReport'
-  },
-  {
-    name: 'LANChat',
-    repo: 'x3388638/LANChat',
-    link: 'https://github.com/x3388638/LANChat'
-  },
-  {
-    name: 'PokemonMap-for-GoPatrol',
-    repo: 'x3388638/PokemonMap-for-GoPatrol',
-    link: 'https://github.com/x3388638/PokemonMap-for-GoPatrol'
-  },
-  {
-    name: 'PKGET userscript w/ Telegram notification',
-    link: 'https://hackmd.io/s/SJOrobrA'
-  },
-  {
-    name: 'RO xmas event userscript',
-    link: 'https://hackmd.io/s/B1pB-7j-z'
-  }
-]
-
-const RANDOM_IMAGES = [...Array(PROJECTS.length)]
+const RANDOM_IMAGES = [...Array(projectList.length)]
   .map((_, i) => require(`../../static/project_bg/${i}.jpg`).default)
   .sort(() => Math.random() - 0.5)
 
@@ -102,6 +57,8 @@ const CardContent = styled.div`
   height: 100%;
   width: 100%;
   color: #f3f3f3;
+  padding: 10px;
+  box-sizing: border-box;
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
 
   span {
@@ -126,8 +83,13 @@ const CardReacttion = styled.div`
   }
 `
 
+const CardDesc = styled.div`
+  font-size: 13px;
+  margin-top: 10px;
+`
+
 const Portfolio = () => {
-  const [projects, setProjects] = useState(PROJECTS)
+  const [projects, setProjects] = useState(projectList)
 
   useEffect(() => {
     Promise.all(
@@ -185,6 +147,9 @@ const Portfolio = () => {
                     </span>
                   </CardReacttion>
                 )}
+                <CardDesc>
+                  <span>{project.desc}</span>
+                </CardDesc>
               </CardContent>
             </ProjectCard>
           </Carousel.Item>

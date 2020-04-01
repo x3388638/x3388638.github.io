@@ -1,0 +1,70 @@
+[
+  {
+    "name": "react-grid-carousel",
+    "desc": "The react carousel component you are swiping/scrolling now",
+    "repo": "x3388638/react-grid-carousel",
+    "link": "https://react-grid-carousel.now.sh/"
+  },
+  {
+    "name": "Yahoo! Answers",
+    "desc": "AMP and revamped page of question page",
+    "link": "https://answers.yahoo.com/question/index?qid=20070611120845AAqwZnB"
+  },
+  {
+    "name": "dcard-images",
+    "desc": "A userscript for Dcard to browse all images attached in article and its comments",
+    "repo": "x3388638/dcard-images",
+    "link": "https://github.com/x3388638/dcard-images"
+  },
+  {
+    "name": "YahooAnswersSpamReport",
+    "desc": "A userscript for legacy Yahoo! Answers to one-click report spam w/ Thanos snap animation",
+    "repo": "x3388638/YahooAnswersSpamReport",
+    "link": "https://github.com/x3388638/YahooAnswersSpamReport"
+  },
+  {
+    "name": "github-calendar-graph",
+    "desc": "A Node.js module to crawl contribution calendar graph on specific user's GitHub page",
+    "repo": "x3388638/github-calendar-graph",
+    "link": "https://github.com/x3388638/github-calendar-graph"
+  },
+  {
+    "name": "KeBiau",
+    "desc": "A service w/ friendly UI for NCNU students to arrange courses",
+    "repo": "x3388638/KeBiau",
+    "link": "https://2yc.tw/KeBiau/#/"
+  },
+  {
+    "name": "LANChat",
+    "desc": "React Native built Android/iOS instant messaging app based on UDP multicast",
+    "repo": "x3388638/LANChat",
+    "link": "https://github.com/x3388638/LANChat"
+  },
+  {
+    "name": "PKGET userscript w/ Telegram notification",
+    "desc": "A userscript to listen Pokemon appearing event and sent notification via Telegram bot/API",
+    "link": "https://hackmd.io/s/SJOrobrA"
+  },
+  {
+    "name": "RO xmas event userscript",
+    "desc": "A userscript to easily get infinite code in the xmas event of RO mobile game",
+    "link": "https://hackmd.io/s/B1pB-7j-z"
+  },
+  {
+    "name": "PokemonMap-for-GoPatrol",
+    "desc": "Web display for GoPatrol",
+    "repo": "x3388638/PokemonMap-for-GoPatrol",
+    "link": "https://github.com/x3388638/PokemonMap-for-GoPatrol"
+  },
+  {
+    "name": "EzCast",
+    "desc": "UDP multicast and WebSocket based chat",
+    "repo": "x3388638/EzCast_web_client",
+    "link": "https://github.com/x3388638/EzCast_web_client"
+  },
+  {
+    "name": "Ingress Intel Map userscript",
+    "desc": "A userscript for Ingress Intel Map to scan Portals in specific area",
+    "link": "https://www.ingress.com/"
+  }
+]

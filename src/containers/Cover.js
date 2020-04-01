@@ -108,6 +108,10 @@ const TabsContainer = styled.section`
   opacity: 0;
   animation: ${fadeIn} cubic-bezier(0, 0, 0.2, 1) 1.5s forwards;
   animation-delay: 2.6s;
+
+  @media screen and (max-width: 767px) {
+    margin: 50px 0 0;
+  }
 `
 
 const Cover = () => (
