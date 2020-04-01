@@ -101,11 +101,7 @@ const Portfolio = () => {
           return project
         }
 
-        return fetch(`${GITHUB_API}/repos/${project.repo}`, {
-          headers: {
-            Authorization: 'token 0e0c8b38fefbe2cd790480491e297ec8892bf2d4'
-          }
-        })
+        return fetch(`${GITHUB_API}/repos/${project.repo}`)
           .then(res => res.json())
           .then(data => {
             return {
