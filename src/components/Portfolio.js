@@ -11,6 +11,9 @@ const RANDOM_IMAGES = [...Array(projectList.length)]
   .sort(() => Math.random() - 0.5)
 
 const Container = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+
   @media screen and (max-width: 767px) {
     margin: 0 -10px;
   }

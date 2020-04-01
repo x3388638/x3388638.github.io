@@ -5,11 +5,8 @@ import Portfolio from '../components/Portfolio'
 
 const Container = styled.div`
   width: 100%;
-  max-width: 1000px;
   padding: 20px 10px 30px;
-  margin: 0 50px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
 
   @media screen and (max-width: 767px) {
     margin: 0;

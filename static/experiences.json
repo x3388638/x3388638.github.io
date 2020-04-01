@@ -1,0 +1,30 @@
+[
+  {
+    "id": "y",
+    "company": "Yahoo",
+    "title": "Software dev engineer",
+    "duration": "2019/02 - now",
+    "link": "https://tw.yahoo.com/"
+  },
+  {
+    "id": "imonology",
+    "company": "Imonology Inc.",
+    "title": "Web full stack engineer intern",
+    "duration": "2014/09 - 2018/09",
+    "link": "https://github.com/imonology"
+  },
+  {
+    "id": "overseas",
+    "company": "University Entrance Committee For Overseas Chinese Students",
+    "title": "Frontend engineer",
+    "duration": "2017/03 - 2018/07",
+    "link": "https://github.com/0verseas"
+  },
+  {
+    "id": "cathay",
+    "company": "Cathay Life Insurance Co., Ltd",
+    "title": "Web summer intern",
+    "duration": "2017/07 - 2017/08",
+    "link": "https://toucherfb.com/cathayholdings/CIP/"
+  }
+]
