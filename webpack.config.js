@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: process.env.NODE_ENV,
   entry: ['react-hot-loader/patch', path.resolve(__dirname, 'src/index.js')],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -33,6 +33,16 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+      'styled-components': path.resolve(
+        __dirname,
+        'node_modules',
+        'styled-components'
+      )
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
