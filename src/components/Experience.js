@@ -8,6 +8,8 @@ const Container = styled.div`
 `
 
 const Row = styled.a`
+  border-radius: 2px;
+  overflow: hidden;
   display: flex;
   padding: 20px;
   cursor: pointer;

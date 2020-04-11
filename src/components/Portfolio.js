@@ -31,6 +31,8 @@ const Container = styled.div`
 `
 
 const ProjectCard = styled.a`
+  border-radius: 2px;
+  overflow: hidden;
   display: block;
   position: relative;
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
@@ -141,7 +143,7 @@ const Portfolio = () => {
       <Carousel
         cols={3}
         rows={2}
-        gap={0}
+        gap={8}
         responsiveLayout={[
           {
             breakpoint: 899,
