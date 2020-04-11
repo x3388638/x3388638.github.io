@@ -2,6 +2,18 @@
 
 ## Dev
 
+### Setup
+
+```
+npm ci
+```
+
+Create github access token for reading pubilc repo and create file `.github_access_token` in app folder
+
+```
+module.exports = 'ACCESS_TOKEN'
+```
+
 **Run dev server**
 
 ```
