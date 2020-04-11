@@ -5,6 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCodeBranch } from '@fortawesome/free-solid-svg-icons'
 import projectList from '../../static/projects.json'
 
+let GITHUB_TOKEN
+if (process.env.NODE_ENV === 'development') {
+  try {
+    GITHUB_TOKEN = require('../../.github_access_token')
+  } catch {
+    console.warn(
+      'GitHub access token not found in .github_access_token, the capacity of github api call will be limited.'
+    )
+  }
+}
+
 const GITHUB_API = 'https://api.github.com'
 const RANDOM_IMAGES = [...Array(projectList.length)]
   .map((_, i) => require(`../../static/project_bg/${i}.jpg`).default)
@@ -101,7 +112,15 @@ const Portfolio = () => {
           return project
         }
 
-        return fetch(`${GITHUB_API}/repos/${project.repo}`)
+        const options = GITHUB_TOKEN
+          ? {
+              headers: {
+                Authorization: `token ${GITHUB_TOKEN}`
+              }
+            }
+          : undefined
+
+        return fetch(`${GITHUB_API}/repos/${project.repo}`, options)
           .then(res => res.json())
           .then(data => {
             return {

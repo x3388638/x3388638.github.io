@@ -106,4 +106,7 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# token
+.github_access_token
+
 .DS_Store
