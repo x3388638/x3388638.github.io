@@ -6,6 +6,12 @@
     "link": "https://react-grid-carousel.now.sh/"
   },
   {
+    "name": "cakeresume-html-editor",
+    "desc": "VSCode based HTML editor for CakeResume to easily tweak your resume layout",
+    "repo": "x3388638/cakeresume-html-editor",
+    "link": "https://github.com/x3388638/cakeresume-html-editor"
+  },
+  {
     "name": "Yahoo! Answers",
     "desc": "AMP and revamped page of question page",
     "link": "https://answers.yahoo.com/question/index?qid=20070611120845AAqwZnB"
