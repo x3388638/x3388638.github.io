@@ -50,12 +50,14 @@ module.exports = {
       template: path.resolve(__dirname, 'index.html'),
       favicon: path.resolve(__dirname, 'static/favicon.ico')
     }),
-    new CopyPlugin([
-      {
-        from: path.resolve(__dirname, 'public/*'),
-        flatten: true
-      }
-    ])
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public/*'),
+          flatten: true
+        }
+      ]
+    })
   ],
   devServer: {
     contentBase: __dirname,
