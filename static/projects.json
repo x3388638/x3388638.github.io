@@ -7,9 +7,15 @@
   },
   {
     "name": "cakeresume-html-editor",
-    "desc": "VSCode based HTML editor for CakeResume to easily tweak your resume layout",
+    "desc": "Userscript to embed Monaco Editor into CakeResume to easily tweak your resume layout",
     "repo": "x3388638/cakeresume-html-editor",
     "link": "https://github.com/x3388638/cakeresume-html-editor"
+  },
+  {
+    "name": "KeBiau",
+    "desc": "Web application w/ friendly UI for NCNU students to arrange courses",
+    "repo": "x3388638/KeBiau",
+    "link": "https://2yc.tw/KeBiau/#/"
   },
   {
     "name": "Yahoo! Answers",
@@ -18,42 +24,42 @@
   },
   {
     "name": "dcard-images",
-    "desc": "A userscript for Dcard to browse all images attached in article and its comments",
+    "desc": "Userscript for Dcard to browse all images attached in article and its comments",
     "repo": "x3388638/dcard-images",
     "link": "https://github.com/x3388638/dcard-images"
   },
   {
-    "name": "YahooAnswersSpamReport",
-    "desc": "A userscript for legacy Yahoo! Answers to one-click report spam w/ Thanos snap animation",
-    "repo": "x3388638/YahooAnswersSpamReport",
-    "link": "https://github.com/x3388638/YahooAnswersSpamReport"
-  },
-  {
     "name": "github-calendar-graph",
-    "desc": "A Node.js module to crawl contribution calendar graph on specific user's GitHub page",
+    "desc": "NPM package to crawl contribution calendar graph on specific user's GitHub page",
     "repo": "x3388638/github-calendar-graph",
     "link": "https://github.com/x3388638/github-calendar-graph"
   },
   {
-    "name": "KeBiau",
-    "desc": "A service w/ friendly UI for NCNU students to arrange courses",
-    "repo": "x3388638/KeBiau",
-    "link": "https://2yc.tw/KeBiau/#/"
+    "name": "package-finder",
+    "desc": "Userscript for GitHub to easily find the repo of specific package",
+    "repo": "x3388638/package-finder",
+    "link": "https://github.com/x3388638/package-finder"
+  },
+  {
+    "name": "YahooAnswersSpamReport",
+    "desc": "Userscript for legacy Yahoo! Answers to one-click report spam w/ Thanos snap animation",
+    "repo": "x3388638/YahooAnswersSpamReport",
+    "link": "https://github.com/x3388638/YahooAnswersSpamReport"
   },
   {
     "name": "LANChat",
-    "desc": "React Native built Android/iOS instant messaging app based on UDP multicast",
+    "desc": "Instant messaging app based on UDP multicast built by React Native for both Android and iOS",
     "repo": "x3388638/LANChat",
     "link": "https://github.com/x3388638/LANChat"
   },
   {
     "name": "PKGET userscript w/ Telegram notification",
-    "desc": "A userscript to listen Pokemon appearing event and sent notification via Telegram bot/API",
+    "desc": "Userscript to listen Pokemon appearing event and sent notification via Telegram bot/API",
     "link": "https://hackmd.io/s/SJOrobrA"
   },
   {
     "name": "RO xmas event userscript",
-    "desc": "A userscript to easily get infinite code in the xmas event of RO mobile game",
+    "desc": "Userscript to easily get infinite code in the xmas event of RO mobile game",
     "link": "https://hackmd.io/s/B1pB-7j-z"
   },
   {
@@ -64,13 +70,13 @@
   },
   {
     "name": "EzCast",
-    "desc": "UDP multicast and WebSocket based chat",
+    "desc": "Web chat based on UDP multicast and WebSocket",
     "repo": "x3388638/EzCast_web_client",
     "link": "https://github.com/x3388638/EzCast_web_client"
   },
   {
     "name": "Ingress Intel Map userscript",
-    "desc": "A userscript for Ingress Intel Map to scan Portals in specific area",
+    "desc": "Userscript for Ingress Intel Map to scan Portals in specific area",
     "link": "https://www.ingress.com/"
   }
 ]
