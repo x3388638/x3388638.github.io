@@ -6,21 +6,27 @@
     "link": "https://react-grid-carousel.now.sh/"
   },
   {
-    "name": "cakeresume-html-editor",
-    "desc": "Userscript to embed Monaco Editor into CakeResume to easily tweak your resume layout",
-    "repo": "x3388638/cakeresume-html-editor",
-    "link": "https://github.com/x3388638/cakeresume-html-editor"
-  },
-  {
     "name": "KeBiau",
     "desc": "Web application w/ friendly UI for NCNU students to arrange courses",
     "repo": "x3388638/KeBiau",
     "link": "https://2yc.tw/KeBiau/#/"
   },
   {
+    "name": "tw-stock-telegram-bot",
+    "desc": "Telegram bot to query real-time TW stock quotes, charts, news, and other related information",
+    "repo": "x3388638/tw-stock-telegram-bot",
+    "link": "https://github.com/x3388638/tw-stock-telegram-bot"
+  },
+  {
     "name": "Yahoo! Answers",
     "desc": "AMP and revamped page of question page",
     "link": "https://answers.yahoo.com/question/index?qid=20070611120845AAqwZnB"
+  },
+  {
+    "name": "cakeresume-html-editor",
+    "desc": "Userscript to embed Monaco Editor into CakeResume to easily tweak your resume layout",
+    "repo": "x3388638/cakeresume-html-editor",
+    "link": "https://github.com/x3388638/cakeresume-html-editor"
   },
   {
     "name": "dcard-images",
