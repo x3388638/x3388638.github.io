@@ -48,8 +48,6 @@ const Backdrop = styled.div`
 const Avatar = styled.img`
   background: #666;
   border-radius: 50%;
-  width: 180px;
-  height: 180px;
   box-shadow: 0px 0px 20px 5px #000;
   opacity: 0;
   animation: ${fadeIn} cubic-bezier(0, 0, 0.2, 1) 1.5s forwards;
@@ -113,13 +111,17 @@ const TabsContainer = styled.section`
 const Cover = () => (
   <Container>
     <Backdrop />
-    <Avatar src={profileImg} alt="YY Chang" />
+    <Avatar src={profileImg} height="180" width="180" alt="YY Chang" />
     <Name>
       <span>YY</span>
       <Title>- Web developer</Title>
     </Name>
     <Social>
-      <a href="https://github.com/x3388638" target="_blank">
+      <a
+        href="https://github.com/x3388638"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon icon={faGithubSquare} /> <span>GitHub</span>
       </a>
       <a
@@ -129,7 +131,11 @@ const Cover = () => (
       >
         <FontAwesomeIcon icon={faLinkedin} /> <span>LinkedIn</span>
       </a>
-      <a href="https://medium.com/@z3388638" target="_blank">
+      <a
+        href="https://medium.com/@z3388638"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <FontAwesomeIcon icon={faMedium} /> <span>Medium</span>
       </a>
     </Social>

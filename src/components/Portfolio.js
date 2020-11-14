@@ -153,7 +153,11 @@ const Portfolio = () => {
       >
         {projects.map((project, i) => (
           <Carousel.Item key={i}>
-            <ProjectCard href={project.link} target="_blank">
+            <ProjectCard
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <CardBackdrop img={RANDOM_IMAGES[i]} />
               <CardContent>
                 <span>{project.name}</span>
