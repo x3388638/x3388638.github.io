@@ -26,6 +26,12 @@ npm run dev
 npm run build
 ```
 
+**Lighthouse**
+
+```
+npm run lhci
+```
+
 **Deploy to gh-pages (master branch)**
 
 ```

@@ -110,3 +110,6 @@ dist
 .github_access_token
 
 .DS_Store
+
+# lighthouse-ci
+.lighthouseci/
