@@ -29,7 +29,7 @@ npm run build
 **Lighthouse**
 
 ```
-npm run lhci
+npm run lhci:dev
 ```
 
 **Deploy to gh-pages (master branch)**

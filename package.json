@@ -10,7 +10,8 @@
     "prettier:check": "prettier --check './**/*.{js,json,css}' && echo \"✅ Prettier validated\"",
     "prettier:write": "prettier --write './**/*.{js,json,css}'",
     "lint": "eslint './**/*.js' && echo \"✅ Lint passed\"",
-    "lhci": "npm run build && lhci autorun"
+    "lhci": "npm run build && lhci autorun",
+    "lhci:dev": "npm run lhci && lhci open"
   },
   "repository": {
     "type": "git",
