@@ -35,6 +35,12 @@
     "link": "https://github.com/x3388638/dcard-images"
   },
   {
+    "name": "104-ignore-not-interesting",
+    "desc": "Ignore jobs you are not interested in on 104",
+    "repo": "x3388638/104-ignore-not-interesting",
+    "link": "https://github.com/x3388638/104-ignore-not-interesting"
+  },
+  {
     "name": "github-calendar-graph",
     "desc": "NPM package to crawl contribution calendar graph on specific user's GitHub page",
     "repo": "x3388638/github-calendar-graph",
@@ -45,12 +51,6 @@
     "desc": "Userscript for GitHub to easily find the repo of specific package",
     "repo": "x3388638/package-finder",
     "link": "https://github.com/x3388638/package-finder"
-  },
-  {
-    "name": "YahooAnswersSpamReport",
-    "desc": "Userscript for legacy Yahoo! Answers to one-click report spam w/ Thanos snap animation",
-    "repo": "x3388638/YahooAnswersSpamReport",
-    "link": "https://github.com/x3388638/YahooAnswersSpamReport"
   },
   {
     "name": "LANChat",
@@ -67,22 +67,5 @@
     "name": "RO xmas event userscript",
     "desc": "Userscript to easily get infinite code in the xmas event of RO mobile game",
     "link": "https://hackmd.io/s/B1pB-7j-z"
-  },
-  {
-    "name": "PokemonMap-for-GoPatrol",
-    "desc": "Web display for GoPatrol",
-    "repo": "x3388638/PokemonMap-for-GoPatrol",
-    "link": "https://github.com/x3388638/PokemonMap-for-GoPatrol"
-  },
-  {
-    "name": "EzCast",
-    "desc": "Web chat based on UDP multicast and WebSocket",
-    "repo": "x3388638/EzCast_web_client",
-    "link": "https://github.com/x3388638/EzCast_web_client"
-  },
-  {
-    "name": "Ingress Intel Map userscript",
-    "desc": "Userscript for Ingress Intel Map to scan Portals in specific area",
-    "link": "https://www.ingress.com/"
   }
 ]
