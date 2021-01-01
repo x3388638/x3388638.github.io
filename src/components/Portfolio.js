@@ -30,17 +30,19 @@ const Container = styled.div`
   }
 `
 
-const ProjectCard = styled.a`
+const ProjectContainer = styled.div`
+  padding: 5px;
+`
+
+const ProjectCard = styled.div`
   border-radius: 2px;
   overflow: hidden;
-  display: block;
   position: relative;
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-  margin: 5px;
 
   @media screen and (min-width: 768px) {
     &:hover {
-      transform: translateY(-5px);
+      transform: translate3d(0, -5px, 0);
       box-shadow: rgba(7, 7, 7, 0.5) 0px 5px 5px 0px;
     }
   }
@@ -66,7 +68,6 @@ const CardContent = styled.div`
   justify-content: center;
   font-size: 20px;
   word-break: break-word;
-  cursor: pointer;
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -90,7 +91,21 @@ const CardContent = styled.div`
   }
 `
 
-const CardReacttion = styled.div`
+const CardTitle = styled.a`
+  color: inherit;
+  text-decoration: inherit;
+`
+
+const StretchBox = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+`
+
+const CardReaction = styled.div`
   margin-top: 15px;
   font-size: 14px;
 
@@ -153,29 +168,34 @@ const Portfolio = () => {
       >
         {projects.map((project, i) => (
           <Carousel.Item key={i}>
-            <ProjectCard
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <CardBackdrop img={RANDOM_IMAGES[i]} />
-              <CardContent>
-                <span>{project.name}</span>
-                {project.repo && (
-                  <CardReacttion>
-                    <span>
-                      <FontAwesomeIcon icon={faStar} /> {project.stars}
-                    </span>
-                    <span>
-                      <FontAwesomeIcon icon={faCodeBranch} /> {project.forks}
-                    </span>
-                  </CardReacttion>
-                )}
-                <CardDesc>
-                  <span>{project.desc}</span>
-                </CardDesc>
-              </CardContent>
-            </ProjectCard>
+            <ProjectContainer>
+              <ProjectCard>
+                <CardBackdrop img={RANDOM_IMAGES[i]} />
+                <CardContent>
+                  <CardTitle
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.name}
+                    <StretchBox />
+                  </CardTitle>
+                  {project.repo && (
+                    <CardReaction>
+                      <span>
+                        <FontAwesomeIcon icon={faStar} /> {project.stars}
+                      </span>
+                      <span>
+                        <FontAwesomeIcon icon={faCodeBranch} /> {project.forks}
+                      </span>
+                    </CardReaction>
+                  )}
+                  <CardDesc>
+                    <span>{project.desc}</span>
+                  </CardDesc>
+                </CardContent>
+              </ProjectCard>
+            </ProjectContainer>
           </Carousel.Item>
         ))}
       </Carousel>
