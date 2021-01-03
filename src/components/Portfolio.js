@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo, createElement } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Carousel from 'react-grid-carousel'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faCodeBranch } from '@fortawesome/free-solid-svg-icons'
+import {
+  faStar,
+  faCodeBranch,
+  faLightbulb
+} from '@fortawesome/free-solid-svg-icons'
 import projectList from '../../static/projects.json'
+import ProjectCard from './ProjectCard'
 
 let GITHUB_TOKEN
 if (process.env.NODE_ENV === 'development') {
@@ -30,70 +36,16 @@ const Container = styled.div`
   }
 `
 
-const ProjectContainer = styled.div`
-  padding: 5px;
-`
-
-const ProjectCard = styled.div`
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-
-  @media screen and (min-width: 768px) {
-    &:hover {
-      transform: translate3d(0, -5px, 0);
-      box-shadow: rgba(7, 7, 7, 0.5) 0px 5px 5px 0px;
-    }
-  }
-`
-
-const CardBackdrop = styled.div`
-  height: 150px;
-  background-image: ${({ img }) => `url(${img})`};
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  @media screen and (max-width: 767px) {
-    height: 200px;
-  }
-`
-
-const CardContent = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  word-break: break-word;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  color: #f3f3f3;
-  padding: 10px;
-  box-sizing: border-box;
-  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-
-  span {
-    filter: drop-shadow(0px 2px 5px black);
-  }
-
-  &:hover {
-    background: rgba(0, 0, 0, 0.1);
-  }
-
-  @media screen and (max-width: 767px) {
-    background: rgba(0, 0, 0, 0.1);
-  }
-`
-
 const CardTitle = styled.a`
   color: inherit;
   text-decoration: inherit;
+`
+
+const ShowMore = styled.button`
+  font-size: 16px;
+  background: unset;
+  border: unset;
+  color: inherit;
 `
 
 const StretchBox = styled.div`
@@ -119,12 +71,20 @@ const CardDesc = styled.div`
   margin-top: 10px;
 `
 
-const Portfolio = () => {
+const Portfolio = ({
+  projectCardCount = Number.MAX_SAFE_INTEGER,
+  showMore = false
+}) => {
   const [projects, setProjects] = useState(projectList)
+  const projectsShowInCarousel = useMemo(
+    () => projects.slice(0, projectCardCount),
+    [projects, projectCardCount]
+  )
+  const [projectModalComponent, setProjectModalComponent] = useState(null)
 
   useEffect(() => {
     Promise.all(
-      projects.map(project => {
+      projectsShowInCarousel.map(project => {
         if (!project.repo) {
           return project
         }
@@ -153,6 +113,20 @@ const Portfolio = () => {
     })
   }, [])
 
+  const handleOpenProjectModal = () => {
+    import('./ProjectModal').then(module => {
+      setProjectModalComponent(
+        createElement(module.default, {
+          onClose: handleCloseProjectModal
+        })
+      )
+    })
+  }
+
+  const handleCloseProjectModal = () => {
+    setProjectModalComponent(null)
+  }
+
   return (
     <Container>
       <Carousel
@@ -166,41 +140,57 @@ const Portfolio = () => {
           }
         ]}
       >
-        {projects.map((project, i) => (
-          <Carousel.Item key={i}>
-            <ProjectContainer>
-              <ProjectCard>
-                <CardBackdrop img={RANDOM_IMAGES[i]} />
-                <CardContent>
-                  <CardTitle
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {project.name}
-                    <StretchBox />
-                  </CardTitle>
-                  {project.repo && (
-                    <CardReaction>
-                      <span>
-                        <FontAwesomeIcon icon={faStar} /> {project.stars}
-                      </span>
-                      <span>
-                        <FontAwesomeIcon icon={faCodeBranch} /> {project.forks}
-                      </span>
-                    </CardReaction>
-                  )}
-                  <CardDesc>
-                    <span>{project.desc}</span>
-                  </CardDesc>
-                </CardContent>
+        {projectsShowInCarousel.map(
+          ({ link, name, repo, stars, forks, desc }, i) => (
+            <Carousel.Item key={i}>
+              <ProjectCard backdropImg={RANDOM_IMAGES[i]}>
+                <CardTitle
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>{name}</span>
+                  <StretchBox />
+                </CardTitle>
+                {repo && Number.isInteger(stars) && Number.isInteger(forks) && (
+                  <CardReaction>
+                    <span>
+                      <FontAwesomeIcon icon={faStar} /> {stars}
+                    </span>
+                    <span>
+                      <FontAwesomeIcon icon={faCodeBranch} /> {forks}
+                    </span>
+                  </CardReaction>
+                )}
+                <CardDesc>
+                  <span>{desc}</span>
+                </CardDesc>
               </ProjectCard>
-            </ProjectContainer>
+            </Carousel.Item>
+          )
+        )}
+        {showMore && (
+          <Carousel.Item key="showMore">
+            <ProjectCard backdropColor="#5f9ea0">
+              <ShowMore onClick={handleOpenProjectModal}>
+                <span>
+                  <FontAwesomeIcon icon={faLightbulb} />
+                  {' Explore More'}
+                </span>
+                <StretchBox />
+              </ShowMore>
+            </ProjectCard>
+            {projectModalComponent}
           </Carousel.Item>
-        ))}
+        )}
       </Carousel>
     </Container>
   )
+}
+
+Portfolio.propTypes = {
+  projectCardCount: PropTypes.number,
+  showMore: PropTypes.bool
 }
 
 export default Portfolio

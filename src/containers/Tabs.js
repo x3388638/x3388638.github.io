@@ -102,7 +102,7 @@ const Tabs = () => {
           <Experience />
         </Content>
         <Content active={activeContent === PORTFOLIO}>
-          <Portfolio />
+          <Portfolio projectCardCount={11} showMore />
         </Content>
       </Body>
     </Container>
