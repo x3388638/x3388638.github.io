@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, createElement } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Carousel from 'react-grid-carousel'
@@ -41,11 +41,10 @@ const CardTitle = styled.a`
   text-decoration: inherit;
 `
 
-const ShowMore = styled.button`
+const ShowMore = styled.a`
   font-size: 16px;
-  background: unset;
-  border: unset;
   color: inherit;
+  text-decoration: none;
 `
 
 const StretchBox = styled.div`
@@ -80,7 +79,6 @@ const Portfolio = ({
     () => projects.slice(0, projectCardCount),
     [projects, projectCardCount]
   )
-  const [projectModalComponent, setProjectModalComponent] = useState(null)
 
   useEffect(() => {
     Promise.all(
@@ -98,7 +96,13 @@ const Portfolio = ({
           : undefined
 
         return fetch(`${GITHUB_API}/repos/${project.repo}`, options)
-          .then(res => res.json())
+          .then(res => {
+            if (res.ok) {
+              return res.json()
+            }
+
+            throw Error()
+          })
           .then(data => {
             return {
               ...project,
@@ -112,20 +116,6 @@ const Portfolio = ({
       setProjects(updatedProjects)
     })
   }, [])
-
-  const handleOpenProjectModal = () => {
-    import('./ProjectModal').then(module => {
-      setProjectModalComponent(
-        createElement(module.default, {
-          onClose: handleCloseProjectModal
-        })
-      )
-    })
-  }
-
-  const handleCloseProjectModal = () => {
-    setProjectModalComponent(null)
-  }
 
   return (
     <Container>
@@ -172,7 +162,11 @@ const Portfolio = ({
         {showMore && (
           <Carousel.Item key="showMore">
             <ProjectCard backdropColor="#5f9ea0">
-              <ShowMore onClick={handleOpenProjectModal}>
+              <ShowMore
+                href="https://github.com/x3388638/x3388638/blob/master/README.md"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <span>
                   <FontAwesomeIcon icon={faLightbulb} />
                   {' Explore More'}
@@ -180,7 +174,6 @@ const Portfolio = ({
                 <StretchBox />
               </ShowMore>
             </ProjectCard>
-            {projectModalComponent}
           </Carousel.Item>
         )}
       </Carousel>

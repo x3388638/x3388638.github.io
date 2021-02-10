@@ -76,7 +76,10 @@ const ProjectCard = ({ backdropImg, backdropColor, children }) => (
 ProjectCard.propTypes = {
   backdropImg: PropTypes.string,
   backdropColor: PropTypes.string,
-  children: PropTypes.element.isRequired
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(PropTypes.node)
+  ]).isRequired
 }
 
 export default ProjectCard
