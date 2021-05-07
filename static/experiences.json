@@ -1,29 +1,36 @@
 [
   {
+    "id": "b",
+    "company": "Leading Blockchain/Crypto Company",
+    "title": "Frontend Developer",
+    "duration": "2021/04 - now",
+    "link": ""
+  },
+  {
     "id": "y",
     "company": "Yahoo",
-    "title": "Software dev engineer",
-    "duration": "2019/02 - now",
+    "title": "Software Dev Engineer",
+    "duration": "2019/02 - 2021/04",
     "link": "https://tw.yahoo.com/"
   },
   {
     "id": "imonology",
     "company": "Imonology Inc.",
-    "title": "Web developer intern",
+    "title": "Web Developer, Intern",
     "duration": "2014/09 - 2018/09",
     "link": "https://github.com/imonology"
   },
   {
     "id": "overseas",
     "company": "University Entrance Committee For Overseas Chinese Students",
-    "title": "Web frontend engineer",
+    "title": "Web Frontend Engineer",
     "duration": "2017/03 - 2018/07",
     "link": "https://github.com/0verseas"
   },
   {
     "id": "cathay",
     "company": "Cathay Life Insurance Co., Ltd",
-    "title": "Web developer summer intern",
+    "title": "Web Developer, Summer Intern",
     "duration": "2017/07 - 2017/08",
     "link": "https://toucherfb.com/cathayholdings/CIP/"
   }

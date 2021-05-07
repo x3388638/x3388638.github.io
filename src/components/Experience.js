@@ -29,8 +29,8 @@ const Row = styled.a`
 `
 
 const Logo = styled.div`
-  width: 35px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 4px;
   background-image: ${({ img }) => `url(${img})`};
   background-size: cover;
