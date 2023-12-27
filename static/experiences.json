@@ -1,15 +1,15 @@
 [
   {
-    "id": "b",
-    "company": "Leading Blockchain/Crypto Company",
-    "title": "Frontend Developer",
-    "duration": "2021/04 - now",
-    "link": ""
+    "id": "binance",
+    "company": "Binance",
+    "title": "Senior Frontend Developer",
+    "duration": "2021/04 - 2023/11",
+    "link": "https://www.binance.com/en"
   },
   {
     "id": "y",
     "company": "Yahoo",
-    "title": "Software Dev Engineer",
+    "title": "Software Dev Engineer, Frontend",
     "duration": "2019/02 - 2021/04",
     "link": "https://tw.yahoo.com/"
   },
@@ -23,7 +23,7 @@
   {
     "id": "overseas",
     "company": "University Entrance Committee For Overseas Chinese Students",
-    "title": "Web Frontend Engineer",
+    "title": "Frontend Engineer",
     "duration": "2017/03 - 2018/07",
     "link": "https://github.com/0verseas"
   },

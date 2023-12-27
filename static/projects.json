@@ -1,9 +1,25 @@
 [
   {
+    "name": "Binance - Bitcoin Button Game (2022)",
+    "desc": "A user acquisition campaign w/ real-time interaction and complex design",
+    "link": "https://www.binance.com/en/support/announcement/press-a-button-win-a-bitcoin-bitcoinbutton-1844f37691dd4a04ace52ba10e8e6610"
+  },
+  {
+    "name": "Yahoo! Answers",
+    "desc": "Refactor from scratch w/ React, Redux, SSR, AMP (GA on 2019 Q4)",
+    "link": "https://en.wikipedia.org/wiki/Yahoo!_Answers"
+  },
+  {
     "name": "react-grid-carousel",
     "desc": "The react carousel component you are swiping/scrolling now",
     "repo": "x3388638/react-grid-carousel",
     "link": "https://react-grid-carousel.now.sh/"
+  },
+  {
+    "name": "pov.tw",
+    "desc": "A pure frontend app integrated with Contentful collects car photography and videos to share the beauty of Taiwan.",
+    "repo": "x3388638/pov",
+    "link": "https://pov.tw/"
   },
   {
     "name": "KeBiau",
@@ -16,11 +32,6 @@
     "desc": "Telegram bot to query real-time TW stock quotes, charts, news, and other related information",
     "repo": "x3388638/tw-stock-telegram-bot",
     "link": "https://github.com/x3388638/tw-stock-telegram-bot"
-  },
-  {
-    "name": "Yahoo! Answers",
-    "desc": "AMP and revamped page of question page",
-    "link": "https://answers.yahoo.com/question/index?qid=20070611120845AAqwZnB"
   },
   {
     "name": "cakeresume-html-editor",
@@ -47,25 +58,8 @@
     "link": "https://github.com/x3388638/github-calendar-graph"
   },
   {
-    "name": "package-finder",
-    "desc": "Userscript for GitHub to easily find the repo of specific package",
-    "repo": "x3388638/package-finder",
-    "link": "https://github.com/x3388638/package-finder"
-  },
-  {
-    "name": "LANChat",
-    "desc": "Instant messaging app based on UDP multicast built by React Native for both Android and iOS",
-    "repo": "x3388638/LANChat",
-    "link": "https://github.com/x3388638/LANChat"
-  },
-  {
-    "name": "PKGET userscript w/ Telegram notification",
-    "desc": "Userscript to listen Pokemon appearing event and sent notification via Telegram bot/API",
-    "link": "https://hackmd.io/s/SJOrobrA"
-  },
-  {
     "name": "RO xmas event userscript",
-    "desc": "Userscript to easily get infinite code in the xmas event of RO mobile game",
+    "desc": "Userscript to easily get infinite code in the Xmas event of RO mobile game",
     "link": "https://hackmd.io/s/B1pB-7j-z"
   }
 ]
