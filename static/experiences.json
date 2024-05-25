@@ -1,5 +1,12 @@
 [
   {
+    "id": "tsmc",
+    "company": "TSMC",
+    "title": "Senior Frontend Engineer",
+    "duration": "2024/04 - now",
+    "link": "https://tsmc.com"
+  },
+  {
     "id": "binance",
     "company": "Binance",
     "title": "Senior Frontend Developer",
@@ -11,7 +18,7 @@
     "company": "Yahoo",
     "title": "Software Dev Engineer, Frontend",
     "duration": "2019/02 - 2021/04",
-    "link": "https://tw.yahoo.com/"
+    "link": "https://yahoo.com/"
   },
   {
     "id": "imonology",
